@@ -46,12 +46,14 @@
  * 	- SOCKET_F
  */
 Gas CO2(SOCKET_A);
+Gas NO2(SOCKET_C);
 
 float co2conc;	// Stores the concentration level in ppm
-float temperature;	// Stores the temperature in ºC
-float humidity;		// Stores the realitve humidity in %RH
-float pressure;		// Stores the pressure in Pa
-int battery;
+float no2conc;
+float temperature;  // Stores the temperature in ºC
+float humidity;	// Stores the realitve humidity in %RH
+float pressure;	// Stores the pressure in Pa
+int battery;  // Stores the concentration level in ppm
 
 //parameters used in the measurement process
 float temporary;
@@ -61,6 +63,7 @@ int iteration;
 
 //paramters used for storing error codes
 int co2error;
+int no2error;
 
 char node_ID[] = "CTT_debug_node";
 
@@ -83,15 +86,19 @@ void loop()
 
     //Turn sensors on
     co2error = CO2.ON();
-    USB.print(F("CO2 sensor return the error code: "));
+    no2error = NO2.ON();
+    
+    USB.print(F("CO2 sensor returned the error code: "));
     USB.println(co2error);
+    USB.print(F("NO2 sensor returned the error code "));
+    USB.println(no2error);
     
     //Let the PSSEP sleep for some time while the sensors warm up
-    PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+    PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 
     //Take measurements 
-    //readCo2sensor();
-    co2conc = CO2.getConc();
+    readCo2sensor();
+    readNo2sensor();
 
     //The temperature, pressure and humidity sensor (BME280) is indirectly measured through either co2 or no2 sensors
     temperature = CO2.getTemp();
@@ -124,6 +131,7 @@ void loop()
     // through the use of LoRaWAN)
     frame.createFrame(ASCII);
     frame.addSensor(SENSOR_GP_CO2, co2conc);
+    frame.addSensor(SENSOR_GP_NO2, no2conc);
     frame.addSensor(SENSOR_GP_TC, temperature);
     frame.addSensor(SENSOR_GP_HUM, humidity);
     frame.addSensor(SENSOR_GP_PRES, pressure);	
@@ -182,4 +190,43 @@ void readCo2sensor(){
     USB.print(co2conc);
     USB.println(F("."));
   }
+  
+void readNo2sensor(){
+    //set measurement parameters to initial states
+    iteration = 10;
+    sum = 0;
+    no2conc = 0;
+    denominator = 0;
+    while(iteration > 0){
+        USB.print(F("Iteration #: "));
+        USB.println(iteration, DEC);
+        if(co2error == 1){
+             temporary = NO2.getConc();
+             USB.print(F("Measured concentration was "));
+             USB.print(temporary);
+             USB.println(F(" ppm."));
+             if(temporary > 0){
+                sum += temporary;
+                USB.print(F("The sum is now "));
+                USB.println(sum);
+                denominator += 1;
+                USB.print(F("The denominator is now "));
+                USB.println(denominator);
+            }
+        } else {
+            USB.println(F("Sensor never started correctly."));  
+        }
+        iteration -= 1;
+    }
+    no2conc = sum / denominator;
+    USB.print(F("Total sum of measured concentrations is "));
+    USB.print(sum);
+    USB.println(F("."));
+    USB.print(sum);
+    USB.print(F(" divided by "));
+    USB.print(denominator);
+    USB.print(F(" is equal to "));
+    USB.print(no2conc);
+    USB.println(F("."));
+}
 
