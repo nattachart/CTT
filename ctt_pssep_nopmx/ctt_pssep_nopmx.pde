@@ -10,6 +10,10 @@ float temperature;	// Stores the temperature in ºC
 float humidity;		// Stores the realitve humidity in %RH
 float pressure;		// Stores the pressure in Pa
 
+float temporary = 0;
+float sum = 0;
+int denominator = 0;
+
 char node_ID[] = "CTT";
 
 void setup()
@@ -25,8 +29,36 @@ void loop()
     CO2.ON();
     NO2.ON();
     PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+
+    USB.println(F("Entering for loop..."));
+    for(int i = 1; i < 10; i++){
+        USB.print(F("i: "));
+        USB.println(i, DEC);
+        
+        temporary = CO2.getConc();
+        
+        USB.print(F("Temporary measurement was "));
+        USB.println(temporary);
+        if(temporary > 0){
+            sum += temporary;
+            denominator += 1;  
+        }
+        delay(10000);
+    }
     
-    concentration1 = CO2.getConc();
+    if(sum > 0 && denominator > 0){
+        concentration1 = sum / denominator;
+    } else {
+        concentration1 = -9999.00;  
+    }
+    
+    USB.print(F("Sum is "));
+    USB.println(sum);
+    USB.print(F("Denominator is "));
+    USB.println(denominator);
+    USB.print(F("There concentration1 is equal to "));
+    USB.println(concentration1);    
+    
     concentration2 = NO2.getConc();
     temperature = CO2.getTemp(1);
     humidity = CO2.getHumidity();
