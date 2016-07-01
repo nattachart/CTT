@@ -7,12 +7,12 @@ Gas NO2(SOCKET_C);
 
 
 //parameters used to hold concentrations and environmental parameters
-float co2concentration;	// Stores the concentration level in ppm
-float no2concentration;
-float temperature;	// Stores the temperature in ºC
-float humidity;		// Stores the realitve humidity in %RH
-float pressure;		// Stores the pressure in Pa
-int battery;
+float co2concentration;	// Stores average co2 concentration 
+float no2concentration; //Stores average no2 concentration
+float temperature; // Stores average temperature measurement
+float humidity;	// Stores average humidity measurement
+float pressure;	// Stores average pressure measurement
+int battery; //Stores the battery level
 
 //parameters used for measurements of gases
 float temporary_co2 = 0;
@@ -34,17 +34,16 @@ int denominator_pres = 0;
 int denominator_hum = 0;
 
 
-
-
 //node ID contents
 char node_ID[] = "CTT";
 
 void setup()
 {
-    USB.println(F("CTT"));
-    // Set the Waspmote ID
-    frame.setID(node_ID);  
-}	
+  USB.ON();
+  USB.println(F("CTT Indoor Testing / Debugging"));
+  frame.setID(node_ID);
+  
+}
 
 
 void loop()
@@ -69,7 +68,7 @@ void loop()
           battery = PWR.getBatteryLevel();
       }  
     } else {
-         USB.println(F("Woah, I feel so energized today! I'm ready to take some measurements."))
+         USB.println(F("Woah, I feel so energized today! I'm ready to take some measurements."));
     }
     
     /*For-loop for (hopefully) taking 10 measurements of each parameter 
@@ -256,4 +255,3 @@ void loop()
     //put PSSEP into deepSleep to save battery 
     PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 }
-
