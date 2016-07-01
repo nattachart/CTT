@@ -12,6 +12,7 @@ float concentration2;
 float temperature;	// Stores the temperature in ºC
 float humidity;		// Stores the realitve humidity in %RH
 float pressure;		// Stores the pressure in Pa
+int battery;
 
 //parameters used for measurements of gases
 float temporaryco2 = 0;
@@ -42,6 +43,11 @@ void loop()
     
     //set the PSSEP into deepSleep to let sensors warm up
     PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+    
+    battery = PWR.getBatteryLevel();
+    USB.print(F("The battery level is currently at "));
+    USB.print(battery);
+    USB.println(F("%"));
     
     //start of measurement process for Co2 
     USB.println("********************************************************************");
