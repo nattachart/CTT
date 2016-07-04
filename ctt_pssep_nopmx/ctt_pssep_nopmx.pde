@@ -232,12 +232,12 @@ void loop()
     NO2.OFF();
 
     //create a frame to hold all values
-    frame.createFrame(ASCII);
+    frame.createFrame(BINARY);
     frame.addSensor(SENSOR_GP_CO2, co2concentration);
     frame.addSensor(SENSOR_GP_NO2, no2concentration);
     frame.addSensor(SENSOR_GP_TC, temperature);
     frame.addSensor(SENSOR_GP_HUM, humidity);
-    frame.addSensor(SENSOR_GP_PRES, pressure);	
+    frame.addSensor(SENSOR_GP_PRES, pressure);
     frame.showFrame();
     
     char data[frame.length * 2 + 1];
@@ -298,7 +298,6 @@ void loop()
         USB.print(F("Error when turning switch off. Error code: "));
         USB.println(error, DEC);
     }
-    
     
     
     //put PSSEP into deepSleep to save battery 
