@@ -1,5 +1,6 @@
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
+#include <WaspLoRaWAN.h>
 
 //definition of gas sensors
 Gas CO2(SOCKET_A);
@@ -33,6 +34,10 @@ int denominator_temp = 0;
 int denominator_pres = 0;
 int denominator_hum = 0;
 
+//LoRaWAN Parameters
+uint8_t error;
+uint8_t socket = SOCKET0;
+uint8_t PORT = 3;
 
 //node ID contents
 char node_ID[] = "CTT";
@@ -235,6 +240,9 @@ void loop()
     frame.addSensor(SENSOR_GP_PRES, pressure);	
     frame.showFrame();
     
+    char data[frame.length * 2 + 1];
+    Utils.hex2str(frame.buffer, data, frame.length);
+    
     //set measurement process parameters to intial values for the next cycle
     temporary_co2 = 0;
     temporary_no2 = 0;
@@ -251,6 +259,47 @@ void loop()
     denominator_temp = 0;
     denominator_pres = 0;
     denominator_hum = 0;  
+    
+    error = LoRaWAN.ON(socket);
+    if(error == 0){
+        USB.println(F("LoRaWAN module is turned on."));  
+    } else {
+        USB.print(F("LoRaWAN module could not be turned on. Error code: "));
+        USB.println(error, DEC);
+    }
+    
+    error = LoRaWAN.joinABP();
+    if(error == 0){
+        USB.println(F("PSSEP has now joined the network."));  
+        
+        error = LoRaWAN.sendUnconfirmed(PORT, data);
+        if(error == 0){
+            USB.println(F("PSSEP sent data unconfirmed."));
+            if(LoRaWAN._dataReceived == true){
+                USB.print(F("Data on port number :"));
+                USB.print(LoRaWAN._port, DEC);
+                USB.print(F("Data: "));
+                USB.println(LoRaWAN._data);
+            }  
+        } else {
+            USB.print(F("PSSEP failed to send data. Error code :"));
+            USB.println(error, DEC);  
+        }
+        
+    } else {
+        USB.print(F("PSSEP failed to join network. Error code: "));
+        USB.println(error, DEC);
+    }
+    
+    error = LoRaWAN.OFF(socket);
+    if(error == 0){
+        USB.println(F("Switch turned off."));  
+    } else {
+        USB.print(F("Error when turning switch off. Error code: "));
+        USB.println(error, DEC);
+    }
+    
+    
     
     //put PSSEP into deepSleep to save battery 
     PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
