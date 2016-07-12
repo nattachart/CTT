@@ -14,6 +14,7 @@ float temperature; // Stores average temperature measurement
 float humidity;	// Stores average humidity measurement
 float pressure;	// Stores average pressure measurement
 int battery; //Stores the battery level
+float batteryVolts;
 
 //parameters used for measurements of gases
 float temporary_co2 = 0;
@@ -62,9 +63,12 @@ void loop()
     
     //Check that battery level is sufficient for measurements (>40%)
     battery = PWR.getBatteryLevel();
+    batteryVolts = PWR.getBatteryVolts();
     USB.print(F("The battery level is currently at "));
     USB.print(battery);
-    USB.println(F("%"));
+    USB.print(F("%, which is equal to "));
+    USB.print(batteryVolts);
+    USB.println(F(" Volts."));
     if(battery < 40){
       while(battery < 40){
           USB.println(F("I'm pretty sleepy... I just need to take a 1 hour nap..."));
@@ -97,6 +101,8 @@ void loop()
         temporary_temp = CO2.getTemp();
         temporary_pres = CO2.getPressure();
         temporary_hum = CO2.getHumidity();
+        battery = PWR.getBatteryLevel();
+        batteryVolts = PWR.getBatteryVolts();
         
         //Print the results of the temporary measurement
         USB.print(F("Co2 measurement = "));
@@ -112,6 +118,12 @@ void loop()
         USB.print(F("humidity measurement = "));
         USB.print(temporary_hum);
         USB.println(F(" %."));
+        USB.print(F("The battery level is currently at "));
+        USB.print(battery);
+        USB.print(F("%, which is equal to "));
+        USB.print(batteryVolts);
+        USB.println(F(" Volts."));
+
         
         //Check that temporary measurement is valid before adding to the sum
         //and adding 1 to the denominator
@@ -168,7 +180,6 @@ void loop()
     } else {
         humidity = -9999.00;  
     }
-    
     
     
     //print results of measurement process
