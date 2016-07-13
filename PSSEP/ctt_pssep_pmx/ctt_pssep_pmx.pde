@@ -114,8 +114,8 @@ void loop()
         USB.println(i, DEC);
         
         //Take measurement of each parameter and place in their respective temporary variables
-        temporary_co2 = CO2.getConc();
-        temporary_no2 = NO2.getConc();
+        temporary_co2 = CO2.getConc(MCP3421_ULTRA_HIGH_RES);
+        temporary_no2 = NO2.getConc(MCP3421_ULTRA_HIGH_RES);
         temporary_temp = CO2.getTemp();
         temporary_pres = CO2.getPressure();
         temporary_hum = CO2.getHumidity();
@@ -199,7 +199,7 @@ void loop()
     }
     
     if(status == 1){
-        measure = OPC_N2.getPM(5000);
+        measure = OPC_N2.getPM(8000);
         if(measure == 1){
             USB.println(F("Measure performed"));
             USB.print(F("PM 1: "));
@@ -311,6 +311,7 @@ void loop()
     denominator_pres = 0;
     denominator_hum = 0;  
     
+    /*
     error = LoRaWAN.ON(socket);
     if(error == 0){
         USB.println(F("LoRaWAN module is turned on."));  
@@ -349,6 +350,7 @@ void loop()
         USB.print(F("Error when turning switch off. Error code: "));
         USB.println(error, DEC);
     }
+    */
     
     
     //put PSSEP into deepSleep to save battery 
