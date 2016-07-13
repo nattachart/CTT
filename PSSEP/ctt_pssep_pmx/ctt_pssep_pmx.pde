@@ -141,7 +141,7 @@ void loop()
             sum_co2 += temporary_co2;
             denominator_co2 += 1;  
         }
-        if(temporary_no2 > 0){
+        if(temporary_no2 >= 0){
             sum_no2 += temporary_no2;
             denominator_no2 += 1;  
         }
@@ -167,7 +167,7 @@ void loop()
         co2concentration = -9999.00;  
     }
     
-    if(sum_no2 > 0 && denominator_no2 > 0){
+    if(sum_no2 >= 0 && denominator_no2 > 0){
         no2concentration = sum_no2 / denominator_no2;  
     } else {
         no2concentration = -9999.00;  
