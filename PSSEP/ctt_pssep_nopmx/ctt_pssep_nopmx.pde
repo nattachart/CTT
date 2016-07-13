@@ -35,6 +35,10 @@ int denominator_temp = 0;
 int denominator_pres = 0;
 int denominator_hum = 0;
 
+//error variables for gas sensors
+uint8_t co2error;
+uint8_t no2error;
+
 //LoRaWAN Parameters
 uint8_t error;
 uint8_t socket = SOCKET0;
@@ -55,8 +59,20 @@ void setup()
 void loop()
 {
     //turn on sensors and set gain of NO2 to max since this is used for indoor debugging		
-    CO2.ON();
-    NO2.ON(LMP91000_GAIN_7);
+    co2error = CO2.ON();
+    if(co2error == 1){
+      USB.println(F("Co2 sensor started correctly."));  
+    } else {
+      USB.print(F("Co2 sensor did not start correctly. Error code: "));
+      USB.println(co2error);  
+    }
+    no2error = NO2.ON(LMP91000_GAIN_7);
+    if(no2error == 1){
+      USB.println(F("No2 sensor started correctly."));  
+    } else {
+      USB.print(F("No2 sensor did not start correctly. Error code: "));
+      USB.println(no2error);  
+    }
     
     //set the PSSEP into deepSleep to let sensors warm up
     PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
@@ -96,8 +112,8 @@ void loop()
         USB.println(i, DEC);
         
         //Take measurement of each parameter and place in their respective temporary variables
-        temporary_co2 = CO2.getConc();
-        temporary_no2 = NO2.getConc();
+        temporary_co2 = CO2.getConc(MCP3421_ULTRA_HIGH_RES);
+        temporary_no2 = NO2.getConc(MCP3421_ULTRA_HIGH_RES);
         temporary_temp = CO2.getTemp();
         temporary_pres = CO2.getPressure();
         temporary_hum = CO2.getHumidity();
@@ -157,7 +173,7 @@ void loop()
         co2concentration = -9999.00;  
     }
     
-    if(sum_no2 > 0 && denominator_no2 > 0){
+    if(sum_no2 >= 0 && denominator_no2 > 0){
         no2concentration = sum_no2 / denominator_no2;  
     } else {
         no2concentration = -9999.00;  
@@ -192,7 +208,7 @@ void loop()
     USB.println(co2concentration);   
    
     USB.print(F("sum_no2 / denominator_no2 =   "));
-    USB.print(sum_co2);
+    USB.print(sum_no2);
     USB.print(F(" / "));
     USB.print(denominator_no2);
     USB.print(F(" = "));

@@ -40,6 +40,10 @@ int denominator_temp = 0;
 int denominator_pres = 0;
 int denominator_hum = 0;
 
+//error variables for sensors
+uint8_t co2error;
+uint8_t no2error;
+
 //LoRaWAN Parameters
 uint8_t error;
 uint8_t socket = SOCKET0;
@@ -76,8 +80,20 @@ void setup()
 void loop()
 {
     //turn on sensors and set gain of NO2 to max since this is used for indoor debugging		
-    CO2.ON();
-    NO2.ON(LMP91000_GAIN_7);
+    co2error = CO2.ON();
+    if(co2error == 1){
+      USB.println(F("Co2 sensor started correctly."));  
+    } else {
+      USB.print(F("Co2 sensor did not start correctly. Error code: "));
+      USB.println(co2error);  
+    }
+    no2error = NO2.ON(LMP91000_GAIN_7);
+    if(no2error == 1){
+      USB.println(F("No2 sensor started correctly."));  
+    } else {
+      USB.print(F("No2 sensor did not start correctly. Error code: "));
+      USB.println(no2error);  
+    }
     
     //set the PSSEP into deepSleep to let sensors warm up
     PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
@@ -229,7 +245,7 @@ void loop()
     USB.println(co2concentration);   
    
     USB.print(F("sum_no2 / denominator_no2 =   "));
-    USB.print(sum_co2);
+    USB.print(sum_no2);
     USB.print(F(" / "));
     USB.print(denominator_no2);
     USB.print(F(" = "));
