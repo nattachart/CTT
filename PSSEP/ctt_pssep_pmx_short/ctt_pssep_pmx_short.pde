@@ -153,9 +153,6 @@ void loop() {
     frame.createFrame(ASCII);
     frame.addSensor(SENSOR_GP_CO2, co2concentration);
     frame.addSensor(SENSOR_GP_NO2, no2concentration);
-    frame.addSensor(SENSOR_GP_TC, temperature);
-    frame.addSensor(SENSOR_GP_HUM, humidity);
-    frame.addSensor(SENSOR_GP_PRES, pressure);
     frame.addSensor(SENSOR_OPC_PM1, OPC_N2._PM1);
     frame.addSensor(SENSOR_OPC_PM2_5, OPC_N2._PM2_5);
     frame.addSensor(SENSOR_OPC_PM10, OPC_N2._PM10);
@@ -163,6 +160,16 @@ void loop() {
     
     char data[frame.length * 2 + 1];
     Utils.hex2str(frame.buffer, data, frame.length);
+    
+    frame.createFrame(ASCII);
+    frame.addSensor(SENSOR_BAT, battery);
+    frame.addSensor(SENSOR_GP_TC, temperature);
+    frame.addSensor(SENSOR_GP_HUM, humidity);
+    frame.addSensor(SENSOR_GP_PRES, pressure);
+    frame.showFrame();
+    
+    char data2[frame.length * 2 + 1];
+    Utils.hex2str(frame.buffer, data2, frame.length);
     
     PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 
