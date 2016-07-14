@@ -287,6 +287,8 @@ void loop()
     denominator_pres = 0;
     denominator_hum = 0;  
     
+    /*
+    
     error = LoRaWAN.ON(socket);
     if(error == 0){
         USB.println(F("LoRaWAN module is turned on."));  
@@ -329,4 +331,6 @@ void loop()
     
     //put PSSEP into deepSleep to save battery 
     PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+    
+    */  
 }
