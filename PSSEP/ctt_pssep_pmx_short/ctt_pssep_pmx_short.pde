@@ -1,11 +1,14 @@
+//Included libraries
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
 #include <WaspOPC_N2.h>
 
+//Creating the gas objects
 Gas CO2(SOCKET_A);
 Gas NO2(SOCKET_C);
 
+//Variables used for environmental measurements
 float co2concentration;
 float no2concentration;
 float temperature;
@@ -14,14 +17,19 @@ float pressure;
 int battery;
 float volts;
 
+//Variables used to store error code from sensors & lora module
 uint8_t co2error;
 uint8_t no2error;
 uint8_t loraerror;
+
+//Variables used for LoRaWAN
 uint8_t socket = SOCKET0;
 uint8_t PORT = 3;
 
+//Used to check if battery levels are high enough for doing PMx measurements
 boolean PMX = false;
 
+//Used to PMx sensor
 char info_string[61];
 int status;
 int measure;
@@ -109,8 +117,8 @@ void loop() {
     temperature = CO2.getTemp();
     humidity = CO2.getHumidity();
     pressure = CO2.getPressure();
-    co2concentration = CO2.getConc(MCP3421_ULTRA_HIGH_RES);
-    no2concentration = NO2.getConc(MCP3421_ULTRA_HIGH_RES);
+    co2concentration = CO2.getConc(MCP3421_ULTRA_HIGH_RES); 
+    no2concentration = NO2.getConc(MCP3421_ULTRA_HIGH_RES); 
     
     CO2.OFF();
     NO2.OFF();
@@ -131,6 +139,8 @@ void loop() {
     USB.print(F("Pressure: "));
     USB.print(pressure);
     USB.println(F(" Pa"));
+    
+    
     
     if(PMX == true){
     status = OPC_N2.ON();
@@ -170,8 +180,12 @@ void loop() {
     frame.addSensor(SENSOR_OPC_PM1, OPC_N2._PM1);
     frame.addSensor(SENSOR_OPC_PM2_5, OPC_N2._PM2_5);
     frame.addSensor(SENSOR_OPC_PM10, OPC_N2._PM10);
-    frame.showFrame();
+    } else {
+    frame.addSensor(SENSOR_OPC_PM1, -1);
+    frame.addSensor(SENSOR_OPC_PM2_5, -1);
+    frame.addSensor(SENSOR_OPC_PM10, -1);
     }
+    frame.showFrame();
     
     char data[frame.length * 2 + 1];
     Utils.hex2str(frame.buffer, data, frame.length);

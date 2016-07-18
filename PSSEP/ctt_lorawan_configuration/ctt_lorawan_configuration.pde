@@ -4,11 +4,11 @@
 char node_ID[] = "NTNU_TK_CTT_XX";
 
 //Define LoRaWAN Parameters
-char DEVICE_EUI[] = "0102030405060708";
-char DEVICE_ADDR[] = "02032223";
-char NWK_SESSION_KEY[] = "2B7E151628AED2A6ABF7158809CF4F3C";
-char APP_SESSION_KEY[] = "2B7E151628AED2A6ABF7158809CF4F3C";
-uint8_t PORT = 1;
+char DEVICE_EUI[] = "000000006E6E178A";
+char DEVICE_ADDR[] = "6E6E178A";
+char NWK_SESSION_KEY[] = "D3B1C3D8BBE7704E5B34BA4ED73AE979";
+char APP_SESSION_KEY[] = "63D7742689100D544FD722DF52AD7BB1";
+uint8_t PORT = 3;
 uint8_t SOCKET = SOCKET0;
 
 //Used to store error codes
@@ -17,7 +17,7 @@ uint8_t error;
 void setup() {
     // put your setup code here, to run once:
     USB.ON();
-    USB.println(F("CTT Trondheim node LoRaWAN configuration"));
+    USB.println(F("CTT Vejle node LoRaWAN configuration"));
     
     //Turn the switch on
     error = LoRaWAN.ON(SOCKET);

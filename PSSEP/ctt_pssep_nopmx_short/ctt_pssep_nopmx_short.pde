@@ -15,16 +15,24 @@ float volts;
 
 uint8_t co2error;
 uint8_t no2error;
-uint8_t loraerror;
+uint8_t errorLoRaWAN;
 uint8_t socket = SOCKET0;
-uint8_t PORT = 3;
 
-char node_ID[] = "CTT_TK_02";
+char node_ID[] = "Vejle_01";
+
+char DEVICE_EUI[]  = "00000000D2ACEF0A";
+char DEVICE_ADDR[] = "D2ACEF0A";
+char NWK_SESSION_KEY[] = "BC306690133E39101194E7C4FA559C2F";
+char APP_SESSION_KEY[] = "3045ADDDC67544C93F53DF1D2303112B";
+char APP_KEY[] = "41D97468A7AE68499F3824959F84C2F3";
+uint8_t PORT = 3; // Port to use in Back-End: from 1 to 223
+
+uint8_t socketLoRaWAN = SOCKET0;
 
 void setup() {
     // put your setup code here, to run once:
     USB.ON();
-    USB.println(F("CTT Indoor Testing - Shorter Version"));
+    USB.println(F("CTT Vejle"));
     frame.setID(node_ID);
     USB.println("********************************************************************");
 }
@@ -52,12 +60,8 @@ void loop() {
     PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
     
     battery = PWR.getBatteryLevel();
-    volts = PWR.getBatteryVolts();
     USB.print(F("The current battery level is: "));
     USB.print(battery);
-    USB.print(F("%, which amounts to "));
-    USB.print(volts);
-    USB.println(F(" V."));
     if(battery < 40){
         USB.println(F("Not enough power left to take measurements."));
         while(battery < 40){
@@ -99,8 +103,15 @@ void loop() {
     USB.print(pressure);
     USB.println(F(" Pa"));
    
+    if(co2concentration <= 0){
+        co2concentration = -99.0;
+    }
     
-    frame.createFrame(ASCII);
+    if(no2concentration < 0){
+        no2concentration = -99.0;
+    }
+    
+    frame.createFrame(BINARY);
     frame.addSensor(SENSOR_GP_CO2, co2concentration);
     frame.addSensor(SENSOR_GP_NO2, no2concentration);
     frame.addSensor(SENSOR_BAT, battery);
@@ -112,6 +123,57 @@ void loop() {
     char data[frame.length * 2 + 1];
     Utils.hex2str(frame.buffer, data, frame.length);
     
-    PWR.deepSleep("00:00:01:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+    errorLoRaWAN = LoRaWAN.ON(socketLoRaWAN);
+    if (errorLoRaWAN == 0) 
+    {
+        USB.println(F("LoRaWAN switch on: OK"));     
+    }
+    else 
+    {
+        USB.print(F("LoRaWAN switch on: error = ")); 
+        USB.println(errorLoRaWAN, DEC);
+    }
+    // Join network
+    errorLoRaWAN = LoRaWAN.joinABP();
+    if (errorLoRaWAN == 0) 
+    {
+        USB.println(F("LoRaWAN join network: OK")); 
+        // Send confirmed packet 1
+        errorLoRaWAN = LoRaWAN.sendUnconfirmed(PORT, data);
+        /* Error messages:
+         * '6' : Module hasn't joined a network
+         * '5' : Sending error
+         * '4' : Error with data length
+         * '2' : Module didn't response
+         * '1' : Module communication error   
+         */
+        if (errorLoRaWAN == 0) 
+        {
+            USB.println(F("LoRaWAN send confirmed packet 1: OK"));     
+        }
+        else 
+        {
+            USB.print(F("LoRaWAN send confirmed packet 1: error = ")); 
+            USB.println(errorLoRaWAN, DEC);
+        }     
+    }
+    else 
+    {
+        USB.print(F("LoRaWAN join network: error = ")); 
+        USB.println(errorLoRaWAN, DEC);
+    }
+    // Turn off LoRaWAN module
+    errorLoRaWAN = LoRaWAN.OFF(socketLoRaWAN);
+    if (errorLoRaWAN == 0) 
+    {
+        USB.println(F("LoRaWAN switch off: OK"));     
+    }
+    else 
+    {
+        USB.print(F("LoRaWAN switch off: error = ")); 
+        USB.println(errorLoRaWAN, DEC);
+    }
+    
+    PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 
 }
