@@ -38,7 +38,7 @@ void loop() {
     battery = PWR.getBatteryLevel();
     if(battery < 40){
         while(battery < 40){
-            frame.create(ASCII);
+            frame.createFrame(ASCII);
             frame.addSensor(SENSOR_BAT, battery);
             char data2[frame.length * 2 + 1];
             Utils.hex2str(frame.buffer, data2, frame.length);
