@@ -1,7 +1,7 @@
 #include <WaspLoRaWAN.h>
 
 //Define the node id for the data frame
-char node_ID[] = "VJCTT01";
+char node_ID[] = "VJCTT02";
 
 //Define LoRaWAN Parameters
 char DEVICE_EUI[] = "";

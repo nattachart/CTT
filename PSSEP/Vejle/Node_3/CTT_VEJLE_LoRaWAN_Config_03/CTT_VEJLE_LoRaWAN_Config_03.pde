@@ -1,7 +1,7 @@
 #include <WaspLoRaWAN.h>
 
 //Define the node id for the data frame
-char node_ID[] = "VJCTT01";
+char node_ID[] = "VJCTT03";
 
 //Define LoRaWAN Parameters
 char DEVICE_EUI[] = "";
@@ -179,7 +179,7 @@ void setup() {
             USB.println(error, DEC);
         }
     }
-  
+    
     //Save the configurations
     error = LoRaWAN.saveConfig();
     if(error == 0){
