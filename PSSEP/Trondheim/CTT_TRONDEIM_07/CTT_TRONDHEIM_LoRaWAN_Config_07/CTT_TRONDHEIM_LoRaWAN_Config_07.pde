@@ -1,13 +1,13 @@
 #include <WaspLoRaWAN.h>
 
 //Define the node id for the data frame
-char node_ID[] = "VJCTT01";
+char node_ID[] = "TKCTT07";
 
 //Define LoRaWAN Parameters
-char DEVICE_EUI[] = "";
-char DEVICE_ADDR[] = "";
-char NWK_SESSION_KEY[] = "";
-char APP_SESSION_KEY[] = "";
+char DEVICE_EUI[] = "00000000803866D2";
+char DEVICE_ADDR[] = "803866D2";
+char NWK_SESSION_KEY[] = "0007E970B7B14766A3F5BA48331073E6";
+char APP_SESSION_KEY[] = "117155013997B4DDC150574FCB55A0B5";
 uint8_t PORT = 3;
 uint8_t SOCKET = SOCKET0;
 
@@ -17,7 +17,7 @@ uint8_t error;
 void setup() {
     // put your setup code here, to run once:
     USB.ON();
-    USB.println(F("CTT Vejle node LoRaWAN configuration"));
+    USB.println(F("CTT TRONDHEIM node LoRaWAN configuration"));
     
     //Turn the switch on
     error = LoRaWAN.ON(SOCKET);
