@@ -53,7 +53,7 @@ for line in stdin:
             measurements[x] = struct.unpack('!f', measurements[x].decode('hex'))[0]
         measurements[5] = (16*battery_conversion(measurements[5][0])) + battery_conversion(measurements[5][1])
     
-    with open('vejle_data2.txt', 'a') as data:
+    with open('output_10.txt', 'a') as data:
         data.writelines('%s ' % item for item in measurements)
         data.write('\n')
         data.close()
