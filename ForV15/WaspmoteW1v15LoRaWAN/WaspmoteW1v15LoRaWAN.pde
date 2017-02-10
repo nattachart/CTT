@@ -1,3 +1,12 @@
+/* To be able to compile this program, new sensors, i.e., 
+	- SENSOR_BATT_VOLT
+	- SENSOR_BATT_ADC
+	- SENSOR_CHARGE_STATUS
+	- SENSOR_SOLAR_CHARGE_CURRENT
+have to be added to Waspmote's library file WaspFrameConstantsv15.h.
+This was done in the file in the directory 'modified-waspmote-libraries'.
+*/
+
 #define _DEBUG
 
 #define BATT_LEVEL F("battery_level=")
