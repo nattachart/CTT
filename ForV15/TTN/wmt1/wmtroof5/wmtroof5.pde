@@ -9,6 +9,19 @@ This was done in the file in the directory 'modified-waspmote-libraries'.
 
 //#define _DEBUG
 
+// Concentratios used in calibration process (PPM Values)
+#define POINT1_PPM_CO2 350.0  //   <-- Normal concentration in air
+#define POINT2_PPM_CO2 1000.0
+#define POINT3_PPM_CO2 3000.0
+
+// Calibration vVoltages obtained during calibration process (Volts)
+#define POINT1_VOLT_CO2 0.300
+#define POINT2_VOLT_CO2 0.350
+#define POINT3_VOLT_CO2 0.380
+
+// Define the number of calibration points
+#define CAL_POINTS 3
+
 #define BATT_LEVEL F("battery_level=")
 #define BATT_VOLT F("battery_voltage=")
 #define BATT_ADC F("battery_ADC_value=")
@@ -23,8 +36,7 @@ This was done in the file in the directory 'modified-waspmote-libraries'.
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
-#include <WaspSensorCities_PRO.h>
-#include <WaspSensorGas_Pro.h>
+#include <WaspSensorGas_v30.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
 #include "configParams.h"
@@ -41,9 +53,13 @@ uint16_t chargeCurrent;
 int status;
 int measure;
 
-Gas co2(SOCKET_B);
+// CO2 Sensor must be connected physically in SOCKET_2 (SOCKET_E on Smart Environment P&S)
+CO2SensorClass CO2Sensor;
 
 uint8_t errorLW;
+
+float concentrations[] = { POINT1_PPM_CO2, POINT2_PPM_CO2, POINT3_PPM_CO2 };
+float voltages[] =       { POINT1_VOLT_CO2, POINT2_VOLT_CO2, POINT3_VOLT_CO2 };
 
 void configureLoRaWAN();
 int getBatteryADCLevel();
@@ -52,28 +68,28 @@ void setup()
 {
   configureLoRaWAN();
   frame.setID(DEVICE_ID);
+
+  // Calculate the slope and the intersection of the logarithmic function
+  CO2Sensor.setCalibrationPoints(voltages, concentrations, CAL_POINTS);
+  
+  ///////////////////////////////////////////
+  // 1. Turn on the board and the SOCKET
+  /////////////////////////////////////////// 
+  
+  // Switch ON and configure the Gases Board
+  Gases.ON();  
+  // Switch ON the CO2 Sensor SOCKET_2
+  CO2Sensor.ON();
 }
 
 void loop()
 {
-  // Power on the the gas sensor socket
-  SensorCitiesPRO.ON(SOCKET_B);
-  // Power on the temperature sensor socket
-  SensorCitiesPRO.ON(SOCKET_E);
-  co2.ON();
-  PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
-  
-  
-  co2Concentration = co2.getConc();
-  temperature = co2.getTemp();
-  humidity = co2.getHumidity();
-  pressure = co2.getPressure();
-  
-  co2.OFF();
-  // Power off the the gas sensor socket
-  SensorCitiesPRO.OFF(SOCKET_B);
-  // Power off the temperature sensor socket
-  SensorCitiesPRO.OFF(SOCKET_E);
+  //PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+  LoRaWAN.setPower(1); //11 dBm
+  co2Concentration = CO2Sensor.readConcentration();
+  temperature = Gases.getTemperature();
+  humidity = Gases.getHumidity();
+  pressure = Gases.getPressure();
 
   batteryVolt = PWR.getBatteryVolts();
   batteryLevel = PWR.getBatteryLevel();
@@ -96,6 +112,8 @@ void loop()
 #ifdef _DEBUG
   frame.showFrame();
 #endif
+  USB.print("Batt level: ");
+  USB.println(batteryLevel);
   //Switch on LoRaWAN
   errorLW = LoRaWAN.ON(SOCKET);
 
@@ -158,8 +176,6 @@ void loop()
   }
 
   errorLW = LoRaWAN.OFF(SOCKET);
-  }
-  PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
   // Check status
   if( errorLW == 0 ) 
@@ -172,6 +188,8 @@ void loop()
     USB.println(errorLW, DEC);
   }
 #endif
+  }
+  PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 }
 
 int getBatteryADCLevel()

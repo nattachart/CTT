@@ -23,7 +23,6 @@ This was done in the file in the directory 'modified-waspmote-libraries'.
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
-#include <WaspSensorCities_PRO.h>
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
@@ -41,7 +40,7 @@ uint16_t chargeCurrent;
 int status;
 int measure;
 
-Gas co2(SOCKET_B);
+Gas co2(SOCKET_A);
 
 uint8_t errorLW;
 
@@ -56,13 +55,9 @@ void setup()
 
 void loop()
 {
-  // Power on the the gas sensor socket
-  SensorCitiesPRO.ON(SOCKET_B);
-  // Power on the temperature sensor socket
-  SensorCitiesPRO.ON(SOCKET_E);
   co2.ON();
-  PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
-  
+  //PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+  PWR.deepSleep("00:00:03:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
   
   co2Concentration = co2.getConc();
   temperature = co2.getTemp();
@@ -70,25 +65,16 @@ void loop()
   pressure = co2.getPressure();
   
   co2.OFF();
-  // Power off the the gas sensor socket
-  SensorCitiesPRO.OFF(SOCKET_B);
-  // Power off the temperature sensor socket
-  SensorCitiesPRO.OFF(SOCKET_E);
 
   batteryVolt = PWR.getBatteryVolts();
   batteryLevel = PWR.getBatteryLevel();
   batteryADCLevel = getBatteryADCLevel();
-  chargeStatus = PWR.getChargingState();
-  chargeCurrent = PWR.getBatteryCurrent();
-  if(batteryLevel > 40)
-  {
+  
   //Create a new frame
   frame.createFrame(BINARY);
   frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
-  frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
-  frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
-  frame.addSensor(SENSOR_CHARGE_STATUS, (uint8_t)chargeStatus);
-  frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
+  //frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
+  //frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
   frame.addSensor(SENSOR_GP_CO2, co2Concentration);
   frame.addSensor(SENSOR_GP_TC, temperature);
   frame.addSensor(SENSOR_GP_HUM, humidity);
@@ -157,9 +143,31 @@ void loop()
 #endif
   }
 
-  errorLW = LoRaWAN.OFF(SOCKET);
+   // rx
+  errorLW = LoRaWAN.receiveRadio(10000);
+  if(errorLW == 0)
+  {
+#ifdef _DEBUG
+    USB.println(F("--> Packet received"));
+    USB.print(F("packet: "));
+    USB.println((char*) LoRaWAN._buffer);
+    USB.print(F("length: "));
+    USB.println(LoRaWAN._length);
+
+    // get SNR 
+    LoRaWAN.getRadioSNR();
+    USB.print(F("SNR: "));
+    USB.println(LoRaWAN._radioSNR);
+#endif
   }
-  PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+  else
+  {
+    USB.println(F("<> Packet not received"));
+  }
+
+  errorLW = LoRaWAN.OFF(SOCKET);
+  //PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+  PWR.deepSleep("00:00:00:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
   // Check status
   if( errorLW == 0 ) 
@@ -417,28 +425,25 @@ void configureLoRaWAN()
   // Set channel 6 -> 867.7 MHz
   // Set channel 7 -> 867.9 MHz
 
-//  uint32_t freq = 867100000;
-//  
-//  for (uint8_t ch = 3; ch <= 7; ch++)
-//  {
-//    error = LoRaWAN.setChannelFreq(ch, freq);
-//    freq += 200000;
-//    
-//    // Check status
-//    if( error == 0 ) 
-//    {
-//      USB.println(F("9. Frequency channel set OK"));     
-//    }
-//    else 
-//    {
-//      USB.print(F("9. Frequency channel set error = ")); 
-//      USB.println(error, DEC);
-//    }
-//    
-//    
-//  }
-  
-  
+//uint32_t freq = 868500000;
+//errorLW = LoRaWAN.setChannelFreq(3, freq);
+/*
+for (uint8_t ch = 3; ch <= 7; ch++)
+{
+	error = LoRaWAN.setChannelFreq(ch, freq);
+	freq += 200000;
+
+	// Check status
+	if( error == 0 ) 
+	{
+		USB.println(F("9. Frequency channel set OK"));     
+	}
+	else 
+	{
+		USB.print(F("9. Frequency channel set error = ")); 
+		USB.println(error, DEC);
+	}
+}*/
 
   //////////////////////////////////////////////
   // 10. Set Duty Cycle for specific channel. (Recommended)
@@ -610,6 +615,22 @@ void configureLoRaWAN()
     USB.println(error, DEC);
   }
 #endif
+
+  //////////////////////////////////////////////
+  // . Set Power level
+  //////////////////////////////////////////////
+  error = LoRaWAN.setPower(1);
+
+  // Check status
+  if( error == 0 ) 
+  {
+    USB.println(F("2. Power level set OK"));     
+  }
+  else 
+  {
+    USB.print(F("2. Power level set error = ")); 
+    USB.println(error, DEC);
+  }
   
   //////////////////////////////////////////////
   // 15. Save configuration
@@ -651,5 +672,3 @@ void configureLoRaWAN()
   }
 #endif
 }
-
-

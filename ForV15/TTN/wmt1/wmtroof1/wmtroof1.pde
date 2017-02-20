@@ -23,6 +23,7 @@ This was done in the file in the directory 'modified-waspmote-libraries'.
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
+#include <WaspSensorCities_PRO.h>
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
@@ -40,7 +41,7 @@ uint16_t chargeCurrent;
 int status;
 int measure;
 
-Gas co2(SOCKET_A);
+Gas co2(SOCKET_B);
 
 uint8_t errorLW;
 
@@ -55,6 +56,10 @@ void setup()
 
 void loop()
 {
+  // Power on the the gas sensor socket
+  SensorCitiesPRO.ON(SOCKET_B);
+  // Power on the temperature sensor socket
+  SensorCitiesPRO.ON(SOCKET_E);
   co2.ON();
   PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
   
@@ -65,13 +70,18 @@ void loop()
   pressure = co2.getPressure();
   
   co2.OFF();
+  // Power off the the gas sensor socket
+  SensorCitiesPRO.OFF(SOCKET_B);
+  // Power off the temperature sensor socket
+  SensorCitiesPRO.OFF(SOCKET_E);
 
   batteryVolt = PWR.getBatteryVolts();
   batteryLevel = PWR.getBatteryLevel();
   batteryADCLevel = getBatteryADCLevel();
   chargeStatus = PWR.getChargingState();
   chargeCurrent = PWR.getBatteryCurrent();
-  
+  if(batteryLevel > 40)
+  {
   //Create a new frame
   frame.createFrame(BINARY);
   frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
@@ -148,6 +158,8 @@ void loop()
   }
 
   errorLW = LoRaWAN.OFF(SOCKET);
+  }
+  PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
   // Check status
   if( errorLW == 0 ) 
@@ -404,30 +416,26 @@ void configureLoRaWAN()
   // Set channel 5 -> 867.5 MHz
   // Set channel 6 -> 867.7 MHz
   // Set channel 7 -> 867.9 MHz
+/*
+uint32_t freq = 867100000;
 
-//  uint32_t freq = 867100000;
-//  
-//  for (uint8_t ch = 3; ch <= 7; ch++)
-//  {
-//    error = LoRaWAN.setChannelFreq(ch, freq);
-//    freq += 200000;
-//    
-//    // Check status
-//    if( error == 0 ) 
-//    {
-//      USB.println(F("9. Frequency channel set OK"));     
-//    }
-//    else 
-//    {
-//      USB.print(F("9. Frequency channel set error = ")); 
-//      USB.println(error, DEC);
-//    }
-//    
-//    
-//  }
-  
-  
+for (uint8_t ch = 3; ch <= 7; ch++)
+{
+	error = LoRaWAN.setChannelFreq(ch, freq);
+	freq += 200000;
 
+	// Check status
+	if( error == 0 ) 
+	{
+		USB.println(F("9. Frequency channel set OK"));     
+	}
+	else 
+	{
+		USB.print(F("9. Frequency channel set error = ")); 
+		USB.println(error, DEC);
+	}
+}
+*/
   //////////////////////////////////////////////
   // 10. Set Duty Cycle for specific channel. (Recommended)
   // Consult your Network Operator and Backend Provider

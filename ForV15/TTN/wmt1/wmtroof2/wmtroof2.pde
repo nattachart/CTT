@@ -23,6 +23,7 @@ This was done in the file in the directory 'modified-waspmote-libraries'.
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
+#include <WaspSensorCities_PRO.h>
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
@@ -40,7 +41,7 @@ uint16_t chargeCurrent;
 int status;
 int measure;
 
-Gas co2(SOCKET_A);
+Gas co2(SOCKET_B);
 
 uint8_t errorLW;
 
@@ -55,6 +56,11 @@ void setup()
 
 void loop()
 {
+  LoRaWAN.setPower(1); //11 dBm
+  // Power on the the gas sensor socket
+  SensorCitiesPRO.ON(SOCKET_B);
+  // Power on the temperature sensor socket
+  SensorCitiesPRO.ON(SOCKET_E);
   co2.ON();
   PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
   
@@ -65,13 +71,18 @@ void loop()
   pressure = co2.getPressure();
   
   co2.OFF();
+  // Power off the the gas sensor socket
+  SensorCitiesPRO.OFF(SOCKET_B);
+  // Power off the temperature sensor socket
+  SensorCitiesPRO.OFF(SOCKET_E);
 
   batteryVolt = PWR.getBatteryVolts();
   batteryLevel = PWR.getBatteryLevel();
   batteryADCLevel = getBatteryADCLevel();
   chargeStatus = PWR.getChargingState();
   chargeCurrent = PWR.getBatteryCurrent();
-  
+  if(batteryLevel > 40)
+  {
   //Create a new frame
   frame.createFrame(BINARY);
   frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
@@ -86,6 +97,8 @@ void loop()
 #ifdef _DEBUG
   frame.showFrame();
 #endif
+  USB.print("Batt level: ");
+  USB.println(batteryLevel);
   //Switch on LoRaWAN
   errorLW = LoRaWAN.ON(SOCKET);
 
@@ -148,6 +161,8 @@ void loop()
   }
 
   errorLW = LoRaWAN.OFF(SOCKET);
+  }
+  PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
   // Check status
   if( errorLW == 0 ) 
