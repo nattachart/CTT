@@ -7,8 +7,6 @@
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
 
-//#define _DEBUG
-
 #define BATT_LEVEL F("battery_level=")
 #define BATT_VOLT F("battery_voltage=")
 #define BATT_ADC F("battery_ADC_value=")
@@ -51,8 +49,6 @@ int getBatteryADCLevel();
 void setup()
 {
 	configureLoRaWAN();
-	LoRaWAN.setPower(TRANSMISSION_POWER);
-	LoRaWAN.setChannelFreq(CHANNEL, FREQUENCY);
 	frame.setID(DEVICE_ID);
 }
 
@@ -63,14 +59,14 @@ void loop()
 	USB.print("Batterry level (%): ");
 	USB.println(batteryLevel);
 #endif
-	if(batteryLevel > 30)
+	if(batteryLevel > 40)
 	{
 		// Power on the the gas sensor socket
 		SensorCitiesPRO.ON(SOCKET_B);
 		// Power on the temperature sensor socket
 		SensorCitiesPRO.ON(SOCKET_E);
 		co2.ON();
-		PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		PWR.deepSleep("00:00:00:05", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
 
 		co2Concentration = co2.getConc();
@@ -104,6 +100,19 @@ void loop()
 #endif
 		//Switch on LoRaWAN
 		errorLW = LoRaWAN.ON(SOCKET);
+
+		uint32_t freq = 867100000;    
+		for (uint8_t ch = 3; ch <= 7; ch++){
+			errorLW = LoRaWAN.setChannelFreq(ch, freq);
+			freq += 200000;
+			if(errorLW == 0){
+				USB.println(F("The frequency channel is now set."));     
+			} else {
+				USB.print(F("Error when setting the frequency channel. Error code: ")); 
+				USB.println(errorLW, DEC);
+			}
+		}
+		LoRaWAN.setPower(TRANSMISSION_POWER);
 
 #ifdef _DEBUG
 		// Check status
@@ -164,10 +173,10 @@ void loop()
 		}
 
 		errorLW = LoRaWAN.OFF(SOCKET);
-		PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 	}
 	else
-		PWR.deepSleep("00:00:40:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
 	// Check status
 	if( errorLW == 0 ) 

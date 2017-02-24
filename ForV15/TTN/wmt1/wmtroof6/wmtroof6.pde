@@ -67,8 +67,6 @@ int getBatteryADCLevel();
 void setup()
 {
 	configureLoRaWAN();
-	LoRaWAN.setPower(TRANSMISSION_POWER);
-	LoRaWAN.setChannelFreq(CHANNEL, FREQUENCY);
 	frame.setID(DEVICE_ID);
 
 	// Calculate the slope and the intersection of the logarithmic function
@@ -91,7 +89,7 @@ void loop()
 	USB.print("Batterry level (%): ");
 	USB.println(batteryLevel);
 #endif
-	if(batteryLevel > 30)
+	if(batteryLevel > 40)
 	{
 		//PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
@@ -121,6 +119,18 @@ void loop()
 		//Switch on LoRaWAN
 		errorLW = LoRaWAN.ON(SOCKET);
 
+		LoRaWAN.setPower(TRANSMISSION_POWER);
+		uint32_t freq = 867100000;    
+		for (uint8_t ch = 3; ch <= 7; ch++){
+			errorLW = LoRaWAN.setChannelFreq(ch, freq);
+			freq += 200000;
+			if(errorLW == 0){
+				USB.println(F("The frequency channel is now set."));     
+			} else {
+				USB.print(F("Error when setting the frequency channel. Error code: ")); 
+				USB.println(errorLW, DEC);
+			}
+		}
 #ifdef _DEBUG
 		// Check status
 		if( errorLW == 0 ) 
@@ -195,7 +205,7 @@ void loop()
 		PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 	}
 	else
-		PWR.deepSleep("00:00:40:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 }
 
 int getBatteryADCLevel()
