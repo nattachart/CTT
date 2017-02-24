@@ -51,24 +51,24 @@ void setup()
 {
 	configureLoRaWAN();
 	frame.setID(DEVICE_ID);
+  
 }
 
 void loop()
 {
-
-	batteryVolt = PWR.getBatteryVolts();
-	batteryLevel = PWR.getBatteryLevel();
+  batteryVolt = PWR.getBatteryVolts();
+  batteryLevel = PWR.getBatteryLevel();
 	batteryADCLevel = getBatteryADCLevel();
+#ifdef _DEBUG
+    USB.print("Battery %: ");
+    USB.println(batteryLevel);
+#endif
 	if(batteryLevel > 40)
 	{
-#ifdef _DEBUG
-		USB.print("Battery %: ");
-		USB.println(batteryLevel);
-#endif
-
+    
 		co2.ON();
 		//PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
-		PWR.deepSleep("00:00:03:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		PWR.deepSleep("00:00:00:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
 		co2Concentration = co2.getConc();
 		temperature = co2.getTemp();
@@ -92,6 +92,18 @@ void loop()
 		//Switch on LoRaWAN
 		errorLW = LoRaWAN.ON(SOCKET);
 
+    uint32_t freq = 867100000;    
+    for (uint8_t ch = 3; ch <= 7; ch++){
+        errorLW = LoRaWAN.setChannelFreq(ch, freq);
+        freq += 200000;
+        if(errorLW == 0){
+            USB.println(F("The frequency channel is now set."));     
+        } else {
+            USB.print(F("Error when setting the frequency channel. Error code: ")); 
+            USB.println(errorLW, DEC);
+        }
+     }
+
 #ifdef _DEBUG
 		// Check status
 		if( errorLW == 0 ) 
@@ -110,7 +122,7 @@ void loop()
 		if(errorLW == 0)
 		{
 			//Send unconfirmed packet
-			errorLW = LoRaWAN.sendUnconfirmed(PORT, frame.buffer, frame.length);
+			errorLW = LoRaWAN.sendConfirmed(PORT, frame.buffer, frame.length);
 
 			// Error messages:
 			/*
@@ -124,7 +136,7 @@ void loop()
 			if( errorLW == 0 ) 
 			{
 #ifdef _DEBUG
-				USB.println(F("3. Send Unconfirmed packet OK")); 
+				USB.println(F("3. Send Confirmed packet OK")); 
 				if (LoRaWAN._dataReceived == true)
 				{ 
 					USB.print(F("   There's data on port number "));
@@ -137,7 +149,7 @@ void loop()
 			else 
 			{
 #ifdef _DEBUG
-				USB.print(F("3. Send Unconfirmed packet error = ")); 
+				USB.print(F("3. Send Confirmed packet error = ")); 
 				USB.println(errorLW, DEC);
 #endif
 			}
@@ -174,7 +186,7 @@ void loop()
 
 		errorLW = LoRaWAN.OFF(SOCKET);
 		//PWR.deepSleep("00:00:04:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
-		PWR.deepSleep("00:00:00:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:00:06:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 #ifdef _DEBUG
 		// Check status
 		if( errorLW == 0 ) 
