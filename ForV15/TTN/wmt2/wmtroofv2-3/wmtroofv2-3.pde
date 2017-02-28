@@ -87,14 +87,14 @@ void loop()
 		//Create a new frame
 		frame.createFrame(BINARY);
 		frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
-		//frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
-		//frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
-		//frame.addSensor(SENSOR_CHARGE_STATUS, (uint8_t)chargeStatus);
-		//frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
-		//frame.addSensor(SENSOR_GP_CO2, co2Concentration);
-		//frame.addSensor(SENSOR_GP_TC, temperature);
-		//frame.addSensor(SENSOR_GP_HUM, humidity);
-		//frame.addSensor(SENSOR_GP_PRES, pressure);
+		frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
+		frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
+		frame.addSensor(SENSOR_CHARGE_STATUS, (uint8_t)chargeStatus);
+		frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
+		frame.addSensor(SENSOR_GP_CO2, co2Concentration);
+		frame.addSensor(SENSOR_GP_TC, temperature);
+		frame.addSensor(SENSOR_GP_HUM, humidity);
+		frame.addSensor(SENSOR_GP_PRES, pressure);
 #ifdef _DEBUG
 		frame.showFrame();
 #endif

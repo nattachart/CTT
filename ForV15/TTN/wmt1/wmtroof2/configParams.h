@@ -8,5 +8,5 @@
 #define FREQUENCY 867500000 //867.5 MHz
 #define CHANNEL 5 //LoRaWAN channel
 
-//#define _DEBUG
+#define _DEBUG
 #define SHOW_BATT_LEVEL

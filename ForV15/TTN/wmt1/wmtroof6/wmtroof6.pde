@@ -72,7 +72,14 @@ void setup()
 	// Calculate the slope and the intersection of the logarithmic function
 	CO2Sensor.setCalibrationPoints(voltages, concentrations, CAL_POINTS);
 
-	
+	///////////////////////////////////////////
+	// 1. Turn on the board and the SOCKET
+	/////////////////////////////////////////// 
+
+	// Switch ON and configure the Gases Board
+	Gases.ON();  
+	// Switch ON the CO2 Sensor SOCKET_2
+	CO2Sensor.ON();
 }
 
 void loop()
@@ -85,15 +92,7 @@ void loop()
 	if(batteryLevel > 40)
 	{
 		//PWR.deepSleep("00:00:02:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
-    ///////////////////////////////////////////
-    // 1. Turn on the board and the SOCKET
-    /////////////////////////////////////////// 
-  
-    // Switch ON and configure the Gases Board
-    Gases.ON();  
-    // Switch ON the CO2 Sensor SOCKET_2
-    CO2Sensor.ON();
-    
+
 		co2Concentration = CO2Sensor.readConcentration();
 		temperature = Gases.getTemperature();
 		humidity = Gases.getHumidity();
@@ -105,15 +104,16 @@ void loop()
 		chargeCurrent = PWR.getBatteryCurrent();
 		//Create a new frame
 		frame.createFrame(BINARY);
-		frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
-		frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
-		frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
-		frame.addSensor(SENSOR_CHARGE_STATUS, (uint8_t)chargeStatus);
-		frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
-		frame.addSensor(SENSOR_GP_CO2, co2Concentration);
-		frame.addSensor(SENSOR_GP_TC, temperature);
-		frame.addSensor(SENSOR_GP_HUM, humidity);
-		frame.addSensor(SENSOR_GP_PRES, pressure);
+    frame.addSensor(SENSOR_BAT, 90);
+		//frame.addSensor(SENSOR_BAT, (uint8_t)batteryLevel);
+		//frame.addSensor(SENSOR_BATT_VOLT, batteryVolt);
+		//frame.addSensor(SENSOR_BATT_ADC, (uint8_t)batteryADCLevel);
+		//frame.addSensor(SENSOR_CHARGE_STATUS, (uint8_t)chargeStatus);
+		//frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
+		//frame.addSensor(SENSOR_GP_CO2, co2Concentration);
+		//frame.addSensor(SENSOR_GP_TC, temperature);
+		//frame.addSensor(SENSOR_GP_HUM, humidity);
+		//frame.addSensor(SENSOR_GP_PRES, pressure);
 #ifdef _DEBUG
 		frame.showFrame();
 #endif
@@ -203,8 +203,6 @@ void loop()
 			USB.println(errorLW, DEC);
 		}
 #endif
-    Gases.OFF();
-    CO2Sensor.OFF();
 		PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 	}
 	else
