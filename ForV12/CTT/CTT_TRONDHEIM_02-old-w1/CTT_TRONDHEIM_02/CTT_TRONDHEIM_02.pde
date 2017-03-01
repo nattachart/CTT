@@ -63,11 +63,11 @@ void loop() {
 //        no2concentration = -99.0;
 //    }
     frame.createFrame(BINARY);
-    frame.addSensor(SENSOR_GP_CO2, co2concentration);
-    frame.addSensor(SENSOR_GP_NO2, 0);
+    /*frame.addSensor(SENSOR_GP_CO2, co2concentration);
+    frame.addSensor(SENSOR_GP_NO2, 0.0);
     frame.addSensor(SENSOR_GP_TC, temperature);
     frame.addSensor(SENSOR_GP_HUM, humidity);
-    frame.addSensor(SENSOR_GP_PRES, pressure);
+    frame.addSensor(SENSOR_GP_PRES, pressure);*/
     frame.addSensor(SENSOR_BAT, battery);
     frame.showFrame();
     char data[frame.length * 2 + 1];
