@@ -1,3 +1,4 @@
+#define VERSION 1
 #define DEVICE_ID "wmt-v12-v3-1"
 #define DEVICE_EUI "0041549CB158AB46"
 #define DEVICE_ADDR "260116E2"
