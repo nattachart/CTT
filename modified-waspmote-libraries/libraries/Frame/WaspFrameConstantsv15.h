@@ -243,6 +243,7 @@
 #define SENSOR_BATT_ADC			174
 #define SENSOR_FLAGS		175
 #define SENSOR_SOLAR_CHARGE_CURRENT	176
+#define SW_VERSION 177
 
 
 /// Flash defines //////////////////////////////////////////////////////////////
@@ -260,6 +261,7 @@ const char	str_frame_173[] 	PROGMEM	= "BATVOLT";
 const char	str_frame_174[] 	PROGMEM	= "BATADC";		
 const char	str_frame_175[] 	PROGMEM	= "FLAGS";		
 const char	str_frame_176[] 	PROGMEM	= "SPCHARGECURRENT";		
+const char	str_frame_177[] 	PROGMEM	= "SWVERSION";		
 
 // Gases v30
 const char	str_frame_00[] 	PROGMEM	= "CO";		
@@ -658,6 +660,7 @@ const char* const FRAME_SENSOR_TABLE[] PROGMEM=
 	str_frame_174,
 	str_frame_175,
 	str_frame_176,
+	str_frame_177,
 	
 };
 	
@@ -884,6 +887,7 @@ const uint8_t FRAME_SENSOR_TYPE_TABLE[] PROGMEM=
 	1,		// 174
 	0,		// 175
 	1,		// 176
+	1,		// 177
 };
 
 
@@ -1105,6 +1109,7 @@ const uint8_t FRAME_SENSOR_FIELD_TABLE[] PROGMEM=
 	1,		// 174
 	1,		// 175
 	1,		// 176
+	1,		// 177
 };
 	
 	
@@ -1322,6 +1327,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,		// 174
 	0,		// 175
 	0,		// 176
+	0,		// 177
 };
 	
 	#endif
