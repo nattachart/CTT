@@ -46,7 +46,7 @@ float humidity;   // Stores the realitve humidity in %RH
 float pressure;   // Stores the pressure in Pa
 float co2Concentration, no2Concentration;
 float pm1, pm2_5, pm10;
-float batteryVolt;
+float batteryVoltage;
 int batteryLevel, batteryADCLevel;
 bool chargeStatus;
 uint16_t chargeCurrent;
@@ -104,14 +104,16 @@ void loop()
 		//Dumb values
 		no2Concentration = pm1 = pm2_5 = pm10 = 0;
 
-		batteryADCLevel = getBatteryADCLevel();
+		//batteryADCLevel = getBatteryADCLevel();
+		batteryVoltage = PWR.getBatteryVolts();
 		chargeStatus = PWR.getChargingState();
 		chargeCurrent = PWR.getBatteryCurrent();
 		//Create a new frame
 		frame.createFrame(BINARY);
 		frame.addSensor(SW_VERSION, (uint16_t)VERSION);
 		frame.addSensor(SENSOR_FLAGS, (uint8_t)chargeStatus);
-		frame.addSensor(SENSOR_BATT_ADC, batteryADCLevel);
+		//frame.addSensor(SENSOR_BATT_ADC, batteryADCLevel);
+		frame.addSensor(SENSOR_BATT_VOLT, (double)batteryVoltage);
 		frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
 		frame.addSensor(SENSOR_GASES_CO2, (double)co2Concentration);
 		frame.addSensor(SENSOR_GASES_TC, (double)temperature);

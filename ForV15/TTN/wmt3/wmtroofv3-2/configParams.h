@@ -1,4 +1,4 @@
-#define VERSION 1
+#define VERSION 2
 #define DEVICE_ID "wmtroofv3-2"
 #define DEVICE_EUI "00D058546E70105D"
 #define DEVICE_ADDR "26011688"
