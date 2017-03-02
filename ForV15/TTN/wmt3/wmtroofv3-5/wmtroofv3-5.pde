@@ -117,9 +117,9 @@ void loop()
 		frame.addSensor(SENSOR_GASES_TC, (double)temperature);
 		frame.addSensor(SENSOR_GASES_HUM, (double)humidity);
 		frame.addSensor(SENSOR_GASES_PRES, (double)pressure);
-		frame.addSensor(SENSOR_GASES_PM1, (double)pm1);
-		frame.addSensor(SENSOR_GASES_PM2_5, (double)pm2_5);
-		frame.addSensor(SENSOR_GASES_PM10, (double)pm10);
+		frame.addSensor(SENSOR_GASES_PRO_PM1, (double)pm1);
+		frame.addSensor(SENSOR_GASES_PRO_PM2_5, (double)pm2_5);
+		frame.addSensor(SENSOR_GASES_PRO_PM10, (double)pm10);
 		frame.addSensor(SENSOR_GASES_NO2, (double)no2Concentration);
 #ifdef _DEBUG
 		frame.showFrame();
