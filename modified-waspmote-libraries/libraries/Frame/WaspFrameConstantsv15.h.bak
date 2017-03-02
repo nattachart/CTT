@@ -241,7 +241,7 @@
 //New sensors
 #define SENSOR_BATT_VOLT		173
 #define SENSOR_BATT_ADC			174
-#define SENSOR_FLAGS		175
+#define SENSOR_CHARGE_STATUS		175
 #define SENSOR_SOLAR_CHARGE_CURRENT	176
 
 
@@ -258,7 +258,7 @@
 //New sensors
 const char	str_frame_173[] 	PROGMEM	= "BATVOLT";		
 const char	str_frame_174[] 	PROGMEM	= "BATADC";		
-const char	str_frame_175[] 	PROGMEM	= "FLAGS";		
+const char	str_frame_175[] 	PROGMEM	= "CHARGESTATUS";		
 const char	str_frame_176[] 	PROGMEM	= "SPCHARGECURRENT";		
 
 // Gases v30
@@ -1129,7 +1129,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	3, 		// 9
 	3, 		// 10
 	3, 		// 11
-
+		
 	//// Gases PRO v30
 	3, 		// 12
 	3, 		// 13
@@ -1140,10 +1140,10 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	3, 		// 18
 	3, 		// 19
 	3, 		// 20
-
+	
 	//// Cities PRO v30
 	2, 		// 21
-
+	
 	//// reserved
 	0,	// 22
 	0,	// 23
@@ -1153,7 +1153,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,	// 27
 	0,	// 28
 	0,	// 29
-
+	
 	//// Gases PRO v30
 	3,		// 30
 	3,		// 31
@@ -1161,13 +1161,13 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	3,		// 33
 	3,		// 34
 	3,		// 35
-
+		
 	//// reserved
 	0,	// 36
 	0,	// 37
 	0,	// 38
 	0,	// 39
-
+	
 	//// Events v30	
 	3,		// 40
 	0,		// 41
@@ -1181,7 +1181,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,		// 49
 	0,		// 50
 	0,		// 51
-
+	
 	//// Additional
 	0, // str_BAT,		// 52
 	6, // str_GPS,		// 53
@@ -1231,7 +1231,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,		// 97
 	0,		// 98
 	0,		// 99
-
+	
 	//// Smart Water Ions
 	3,		// 100
 	3,		// 101
@@ -1256,7 +1256,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	3,		// 120
 	3,		// 121
 	3,		// 122
-
+	
 	//// Additional
 	0,		// 123
 	0,	// 124
@@ -1264,10 +1264,10 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,		// 126
 	0,		// 127
 	0,		// 128
-
+	
 	//// Radiation
 	6,		// 129
-
+	
 	//// Smart Water
 	2,		// 130
 	3,		// 131
@@ -1289,7 +1289,7 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	0,	// 147
 	0,	// 148
 	0,	// 149
-
+	
 	//// Smart Agriculture
 	2,		// 150
 	2,		// 151
@@ -1311,12 +1311,12 @@ const uint8_t FRAME_DECIMAL_TABLE[] PROGMEM =
 	2,		// 167
 	2,		// 168
 	0,	// 169
-
+		
 	//// Ambient Control
 	2,		// 170
 	1,		// 171
 	3,		// 172
-
+	
 	// New sensors
 	3,		// 173
 	0,		// 174
