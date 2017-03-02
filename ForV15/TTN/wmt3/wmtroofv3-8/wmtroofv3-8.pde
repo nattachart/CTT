@@ -94,7 +94,7 @@ void loop()
 		Gases.ON();  
 		// Switch ON the CO2 Sensor SOCKET_2
 		CO2Sensor.ON();
-		PWR.deepSleep("00:00:00:05", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		PWR.deepSleep("00:00:00:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
 		co2Concentration = CO2Sensor.readConcentration();
 		temperature = Gases.getTemperature();

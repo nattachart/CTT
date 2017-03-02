@@ -68,7 +68,7 @@ void loop()
 		// Power on the temperature sensor socket
 		SensorCitiesPRO.ON(SOCKET_E);
 		co2.ON();
-		PWR.deepSleep("00:00:00:05", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
 
 		co2Concentration = co2.getConc();
@@ -173,7 +173,7 @@ void loop()
 		}
 
 		errorLW = LoRaWAN.OFF(SOCKET);
-		PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:00:03:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 	}
 	else
 		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
