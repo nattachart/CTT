@@ -11,7 +11,7 @@ function parseHexString(str) {
 const util = require('util');
 
 var hex;
-hex = parseHexString("3C3D3E0648330E7863D937420B776D74726F6F6676332D342320");
+hex = parseHexString("3C3D3E064A22557863D93742DB776D74726F6F6676332D312329B10300AF01AD54E38540B0000001CCF4F5434A0AD7C3404C00FB1A424D8150C3474600000000470000000048000000000600000000");
 console.log(hex);
 
 for(var i=0; i<hex.length; i++){
@@ -30,10 +30,10 @@ function getNumberOfBytes(payload){
 	return payload[4];
 }
 function getSeparatorCharCode(payload){
-	return payload[5];
+	return 0x23;
 }
 function getSerialID(payload){
-	var start = 6;
+	var start = 5;
 	var sid = "";
 	for(var i=start; i<start+8; i++){
 		sid += payload[i].toString(16);
@@ -41,10 +41,10 @@ function getSerialID(payload){
 	return sid;
 }
 function getWaspmoteIDEndIndex(payload, separatorCode){
-	var index = 14; //The starting index of the Waspmote ID
-	while(payload[index] != separatorCode){
-		index++;
-	}
+	var index = 13; The starting index of the Waspmote ID
+		while(payload[index] != separatorCode){
+			index++;
+		}
 	return index-1;
 }
 function getFrameSequence(payload, wIDEndIndex){
@@ -54,29 +54,40 @@ function getStartPayloadIndex(wIDIndex){
 	return wIDIndex + 3;
 }
 function getUInt16(payload, startByte){
-	//Little endian
-	var value = payload[startByte + 1];
+	Little endian
+		var value = payload[startByte + 1];
 	value <<= 8;
 	value |= payload[startByte] & 0x00FF;
 	return value;
 }
 function getFloat(payload, startByte){
-	//Little endian
-	var value = (payload[startByte + 3] << 24) && 0xFF000000;
-	value |= (payload[startByte + 2] << 16) & 0x00FF0000;
-	value |= (payload[startByte + 1] << 8) & 0x0000FF00;
-	value |= payload[startByte] & 0x000000FF;
-	var negative = (value & 0x80000000) != 0; //If the msb is set, the number is negative.
-	var exponent = (value & 0x7F800000) >> 23;
-	var decimal = (value & 0x007FFFFF);
-	exponent -= 127; //Subtract the exponent bias (127) from the excess.
+	Little endian
+		/*var value = (payload[startByte + 3] << 24) && 0xFF000000;
+		  value |= (payload[startByte + 2] << 16) & 0x00FF0000;
+		  value |= (payload[startByte + 1] << 8) & 0x0000FF00;
+		  value |= payload[startByte] & 0x000000FF;*/
+		var negative = (payload[startByte + 3] & 0x80) !== 0; If the msb is set, the number is negative.
+		var exponent = payload[startByte + 3] & 0x7F;
+	exponent <<= 1;
+	exponent |= (0x80 & payload[startByte + 2]) >> 7;
+	console.log(exponent);
+	var decimal = (0x7F & payload[startByte + 2]) << 8;
+	decimal |= payload[startByte + 1];
+	decimal <<= 8;
+	decimal |= payload[startByte];
+	console.log(decimal.toString(16));
+	exponent -= 127; Subtract the exponent bias (127) from the excess.
+		console.log(exponent);
 	var fraction = 1;
 	for(var i=0; i < 23; i++){
-		fraction += ((decimal & 1 << (22 - i)) != 0) ? Math.pow(2, -(i-1)) : 0;
+		fraction += (((((decimal & (1 << (22 - i))) >> (22-i)) & 1) !== 0) ? Math.pow(2, -(i+1)) : 0);
 	}
-	value = fraction * Math.pow(2, exponent);
+	var value = fraction * Math.pow(2, exponent);
+	value = negative ? -value : value;
 	return value;
 }
+var test = [0x00, 0x00, 0x20, 0x40];
+console.log("test: " + getFloat(test, 0));
 function getFirmwareVersion(payload, startPayloadIndex){
 	return getUInt16(payload, startPayloadIndex+1);
 }
