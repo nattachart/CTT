@@ -66,6 +66,9 @@ function getFloat(payload, startByte){
 	value |= (payload[startByte + 2] << 16) & 0x00FF0000;
 	value |= (payload[startByte + 1] << 8) & 0x0000FF00;
 	value |= payload[startByte] & 0x000000FF;
+	var negative = (value & 0x80000000) != 0; //If the msb is set, the number is negative.
+	var exponent = (value & 0x7F800000) >> 23;
+	var fraction = (value & 0x007FFFFF);
 	return value;
 }
 function getFirmwareVersion(payload, startPayloadIndex){
