@@ -6,11 +6,12 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
+#define VERSION 4
 
 #define _DEBUG
 
 // Concentratios used in calibration process (PPM Values)
-#define POINT1_PPM_CO2 350.0  //   <-- Normal concentration in air
+#define POINT1_PPM_CO2 300.0  //   <-- Normal concentration in air
 #define POINT2_PPM_CO2 1000.0
 #define POINT3_PPM_CO2 3000.0
 
@@ -36,20 +37,35 @@
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
+#define MAX_TEMP 60
+#define MIN_TEMP -40
+#define MAX_PRES 200000
+#define MIN_PRES 50000
+#define MAX_HUM 100
+#define MIN_HUM 0
+#define MAX_CO2 1000
+#define MIN_CO2 50
+#define MAX_BATT_VOLT 5
+#define MIN_BATT_VOLT 0
+#define MAX_CHARGE_CURRENT 500
+#define MIN_CHARGE_CURRENT 0
+
+#define MAX_SENSE_COUNT 10
+
 #include <WaspSensorGas_v30.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
 #include "configParams.h"
 
-float temperature;  // Stores the temperature in ºC
-float humidity;   // Stores the realitve humidity in %RH
-float pressure;   // Stores the pressure in Pa
-float co2Concentration, no2Concentration;
+float itmTemperature, temperature;  // Stores the temperature in ºC
+float itmHumidity, humidity;   // Stores the realitve humidity in %RH
+float itmPressure, pressure;   // Stores the pressure in Pa
+float itmCO2, itmNO2, co2Concentration, no2Concentration;
 float pm1, pm2_5, pm10;
-float batteryVoltage;
+float itmBatteryVoltage, batteryVoltage;
 int batteryLevel, batteryADCLevel;
 bool chargeStatus;
-uint16_t chargeCurrent;
+uint16_t itmChargeCurrent, chargeCurrent;
 
 int status;
 int measure;
@@ -58,6 +74,8 @@ int measure;
 CO2SensorClass CO2Sensor;
 
 uint8_t errorLW;
+
+int senseCount;
 
 float concentrations[] = { POINT1_PPM_CO2, POINT2_PPM_CO2, POINT3_PPM_CO2 };
 float voltages[] =       { POINT1_VOLT_CO2, POINT2_VOLT_CO2, POINT3_VOLT_CO2 };
@@ -94,20 +112,54 @@ void loop()
 		Gases.ON();  
 		// Switch ON the CO2 Sensor SOCKET_2
 		CO2Sensor.ON();
-		PWR.deepSleep("00:00:00:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
-		co2Concentration = CO2Sensor.readConcentration();
-		temperature = Gases.getTemperature();
-		humidity = Gases.getHumidity();
-		pressure = Gases.getPressure();
+		co2Concentration = temperature = humidity = pressure = 0;
+		senseCount = 0;
+		while(senseCount < MAX_SENSE_COUNT)
+		{
+			//Sense the values and start it all over again if there is a value out of range.
+			itmCO2 = CO2Sensor.readConcentration();
+			if(itmCO2 < MIN_CO2 || itmCO2 > MAX_CO2)
+				continue;
+			itmTemperature = Gases.getTemperature();
+			if(itmTemperature < MIN_TEMP || itmTemperature > MAX_TEMP)
+				continue;
+			itmHumidity = Gases.getHumidity();
+			if(itmHumidity < MIN_HUM || itmHumidity > MAX_HUM)
+				continue;
+			itmPressure = Gases.getPressure();
+			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES)
+				continue;
+			itmBatteryVoltage = PWR.getBatteryVolts();
+			if(itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT)
+				continue;
+			itmChargeCurrent = PWR.getBatteryCurrent();
+			if(itmChargeCurrent < MIN_CHARGE_CURRENT || itmChargeCurrent > MAX_CHARGE_CURRENT)
+				continue;
+
+			co2Concentration += itmCO2;
+			temperature += itmTemperature;
+			humidity += itmHumidity;
+			pressure += itmPressure;
+			batteryVoltage += itmBatteryVoltage;
+			chargeCurrent += itmChargeCurrent;
+
+			senseCount++;
+		}
+
+		co2Concentration /= MAX_SENSE_COUNT;
+		temperature /= MAX_SENSE_COUNT;
+		humidity /= MAX_SENSE_COUNT;
+		pressure /= MAX_SENSE_COUNT;
+		batteryVoltage /= MAX_SENSE_COUNT;
+		chargeCurrent /= MAX_SENSE_COUNT;
 
 		//Dumb values
 		no2Concentration = pm1 = pm2_5 = pm10 = 0;
 
 		//batteryADCLevel = getBatteryADCLevel();
-		batteryVoltage = PWR.getBatteryVolts();
 		chargeStatus = PWR.getChargingState();
-		chargeCurrent = PWR.getBatteryCurrent();
 		//Create a new frame
 		frame.createFrame(BINARY);
 		frame.addSensor(SW_VERSION, (uint16_t)VERSION);
@@ -206,7 +258,7 @@ void loop()
 #endif
 		Gases.OFF();
 		CO2Sensor.OFF();
-		PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		PWR.deepSleep("00:00:03:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 	}
 	else
 		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);

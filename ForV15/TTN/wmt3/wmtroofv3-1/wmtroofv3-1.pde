@@ -6,6 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
+#define VERSION 4
 
 #define BATT_LEVEL F("battery_level=")
 #define BATT_VOLT F("battery_voltage=")
@@ -21,21 +22,36 @@
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
 
+#define MAX_TEMP 60
+#define MIN_TEMP -40
+#define MAX_PRES 200000
+#define MIN_PRES 50000
+#define MAX_HUM 100
+#define MIN_HUM 0
+#define MAX_CO2 1000
+#define MIN_CO2 50
+#define MAX_BATT_VOLT 5
+#define MIN_BATT_VOLT 0
+#define MAX_CHARGE_CURRENT 500
+#define MIN_CHARGE_CURRENT 0
+
+#define MAX_SENSE_COUNT 10
+
 #include <WaspSensorCities_PRO.h>
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
 #include "configParams.h"
 
-float temperature;  // Stores the temperature in ºC
-float humidity;   // Stores the realitve humidity in %RH
-float pressure;   // Stores the pressure in Pa
-float co2Concentration, no2Concentration;
+float itmTemperature, temperature;  // Stores the temperature in ºC
+float itmHumidity, humidity;   // Stores the realitve humidity in %RH
+float itmPressure, pressure;   // Stores the pressure in Pa
+float itmCO2, itmNO2, co2Concentration, no2Concentration;
 float pm1, pm2_5, pm10;
-float batteryVoltage;
+float itmBatteryVoltage, batteryVoltage;
 int batteryLevel, batteryADCLevel;
 bool chargeStatus;
-uint16_t chargeCurrent;
+uint16_t itmChargeCurrent, chargeCurrent;
 
 int status;
 int measure;
@@ -43,6 +59,8 @@ int measure;
 Gas co2(SOCKET_B);
 
 uint8_t errorLW;
+
+int senseCount;
 
 void configureLoRaWAN();
 int getBatteryADCLevel();
@@ -70,13 +88,49 @@ void loop()
 		co2.ON();
 		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
+		co2Concentration = temperature = humidity = pressure = 0;
+		senseCount = 0;
+		while(senseCount < MAX_SENSE_COUNT)
+		{
+			//Sense the values and start it all over again if there is a value out of range.
+			itmCO2 = co2.getConc();
+			if(itmCO2 < MIN_CO2 || itmCO2 > MAX_CO2)
+				continue;
+			itmTemperature = co2.getTemp();
+			if(itmTemperature < MIN_TEMP || itmTemperature > MAX_TEMP)
+				continue;
+			itmHumidity = co2.getHumidity();
+			if(itmHumidity < MIN_HUM || itmHumidity > MAX_HUM)
+				continue;
+			itmPressure = co2.getPressure();
+			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES)
+				continue;
+			itmBatteryVoltage = PWR.getBatteryVolts();
+			if(itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT)
+				continue;
+			itmChargeCurrent = PWR.getBatteryCurrent();
+			if(itmChargeCurrent < MIN_CHARGE_CURRENT || itmChargeCurrent > MAX_CHARGE_CURRENT)
+				continue;
 
-		co2Concentration = co2.getConc();
-		temperature = co2.getTemp();
-		humidity = co2.getHumidity();
-		pressure = co2.getPressure();
+			co2Concentration += itmCO2;
+			temperature += itmTemperature;
+			humidity += itmHumidity;
+			pressure += itmPressure;
+			batteryVoltage += itmBatteryVoltage;
+			chargeCurrent += itmChargeCurrent;
+
+			senseCount++;
+		}
 
 		co2.OFF();
+
+		co2Concentration /= MAX_SENSE_COUNT;
+		temperature /= MAX_SENSE_COUNT;
+		humidity /= MAX_SENSE_COUNT;
+		pressure /= MAX_SENSE_COUNT;
+		batteryVoltage /= MAX_SENSE_COUNT;
+		chargeCurrent /= MAX_SENSE_COUNT;
+
 		// Power off the the gas sensor socket
 		SensorCitiesPRO.OFF(SOCKET_B);
 		// Power off the temperature sensor socket
@@ -86,9 +140,7 @@ void loop()
 		no2Concentration = pm1 = pm2_5 = pm10 = 0;
 
 		//batteryADCLevel = getBatteryADCLevel();
-		batteryVoltage = PWR.getBatteryVolts();
 		chargeStatus = PWR.getChargingState();
-		chargeCurrent = PWR.getBatteryCurrent();
 		//Create a new frame
 		frame.createFrame(BINARY);
 		frame.addSensor(SW_VERSION, (uint16_t)VERSION);
