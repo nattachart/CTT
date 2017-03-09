@@ -2,7 +2,7 @@
    - SENSOR_BATT_VOLT
    - SENSOR_BATT_ADC
    - SENSOR_CHARGE_STATUS
-   - SENSOR_SOLAR_CHARGE_CURRENT
+   - SENSOR_SOLAR_CHARGE_CURREN
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
@@ -88,7 +88,7 @@ void loop()
 		co2.ON();
 		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
-		co2Concentration = temperature = humidity = pressure = 0;
+		co2Concentration = temperature = humidity = pressure = batteryVoltage = chargeCurrent = 0;
 		senseCount = 0;
 		while(senseCount < MAX_SENSE_COUNT)
 		{
@@ -116,8 +116,9 @@ void loop()
 			temperature += itmTemperature;
 			humidity += itmHumidity;
 			pressure += itmPressure;
-			batteryVoltage += itmBatteryVoltage;
-			chargeCurrent += itmChargeCurrent;
+			//Do not accumulate the following 2 values.
+			batteryVoltage = itmBatteryVoltage;
+			chargeCurrent = itmChargeCurrent;
 
 			senseCount++;
 		}
@@ -128,8 +129,6 @@ void loop()
 		temperature /= MAX_SENSE_COUNT;
 		humidity /= MAX_SENSE_COUNT;
 		pressure /= MAX_SENSE_COUNT;
-		batteryVoltage /= MAX_SENSE_COUNT;
-		chargeCurrent /= MAX_SENSE_COUNT;
 
 		// Power off the the gas sensor socket
 		SensorCitiesPRO.OFF(SOCKET_B);

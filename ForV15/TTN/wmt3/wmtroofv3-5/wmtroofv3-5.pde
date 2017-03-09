@@ -114,7 +114,7 @@ void loop()
 		CO2Sensor.ON();
 		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
-		co2Concentration = temperature = humidity = pressure = 0;
+		co2Concentration = temperature = humidity = pressure = batteryVoltage = chargeCurrent = 0;
 		senseCount = 0;
 		while(senseCount < MAX_SENSE_COUNT)
 		{
@@ -142,8 +142,9 @@ void loop()
 			temperature += itmTemperature;
 			humidity += itmHumidity;
 			pressure += itmPressure;
-			batteryVoltage += itmBatteryVoltage;
-			chargeCurrent += itmChargeCurrent;
+			//Do not accumulate the following 2 values.
+			batteryVoltage = itmBatteryVoltage;
+			chargeCurrent = itmChargeCurrent;
 
 			senseCount++;
 		}
@@ -152,8 +153,6 @@ void loop()
 		temperature /= MAX_SENSE_COUNT;
 		humidity /= MAX_SENSE_COUNT;
 		pressure /= MAX_SENSE_COUNT;
-		batteryVoltage /= MAX_SENSE_COUNT;
-		chargeCurrent /= MAX_SENSE_COUNT;
 
 		//Dumb values
 		no2Concentration = pm1 = pm2_5 = pm10 = 0;
