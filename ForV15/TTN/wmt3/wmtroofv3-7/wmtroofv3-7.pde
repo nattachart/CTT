@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 4
+#define VERSION 5
 
 #define _DEBUG
 
