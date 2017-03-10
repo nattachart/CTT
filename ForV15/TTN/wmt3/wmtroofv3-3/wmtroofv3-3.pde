@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 5
+#define VERSION 6
 
 #define BATT_LEVEL F("battery_level=")
 #define BATT_VOLT F("battery_voltage=")
@@ -50,8 +50,9 @@ float itmCO2, itmNO2, co2Concentration, no2Concentration;
 float pm1, pm2_5, pm10;
 float itmBatteryVoltage, batteryVoltage;
 int batteryLevel, batteryADCLevel;
-bool chargeStatus;
+bool chargeStatus, battVoltOutOfRange;
 uint16_t itmChargeCurrent, chargeCurrent;
+float chargeCurrentCount;
 
 int status;
 int measure;
@@ -89,7 +90,9 @@ void loop()
 		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 
 		co2Concentration = temperature = humidity = pressure = batteryVoltage = chargeCurrent = 0;
+		chargeCurrentCount = 0;
 		senseCount = 0;
+		battVoltOutOfRange = true;
 		while(senseCount < MAX_SENSE_COUNT)
 		{
 			//Sense the values and start it all over again if there is a value out of range.
@@ -106,8 +109,13 @@ void loop()
 			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES)
 				continue;
 			itmBatteryVoltage = PWR.getBatteryVolts();
-			if(itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT)
+			if((itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT) && battVoltOutOfRange)
 				continue;
+			else if(battVoltOutOfRange)
+			{
+				battVoltOutOfRange = false;
+				batteryVoltage = itmBatteryVoltage;
+			}
 			itmChargeCurrent = PWR.getBatteryCurrent();
 			if(itmChargeCurrent < MIN_CHARGE_CURRENT || itmChargeCurrent > MAX_CHARGE_CURRENT)
 				continue;
@@ -116,9 +124,11 @@ void loop()
 			temperature += itmTemperature;
 			humidity += itmHumidity;
 			pressure += itmPressure;
-			//Do not accumulate the following 2 values.
-			batteryVoltage = itmBatteryVoltage;
-			chargeCurrent = itmChargeCurrent;
+			if(itmChargeCurrent > 0)
+			{
+				chargeCurrent += itmChargeCurrent;
+				chargeCurrentCount++;
+			}
 
 			senseCount++;
 		}
@@ -129,6 +139,7 @@ void loop()
 		temperature /= MAX_SENSE_COUNT;
 		humidity /= MAX_SENSE_COUNT;
 		pressure /= MAX_SENSE_COUNT;
+		chargeCurrent /= chargeCurrentCount;
 
 		// Power off the the gas sensor socket
 		SensorCitiesPRO.OFF(SOCKET_B);

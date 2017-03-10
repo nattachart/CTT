@@ -6,21 +6,47 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-
+#define VERSION 2
 
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
+
+#define MAX_TEMP 60
+#define MIN_TEMP -40
+#define MAX_PRES 200000
+#define MIN_PRES 50000
+#define MAX_HUM 100
+#define MIN_HUM 0
+#define MAX_CO2 1000
+#define MIN_CO2 50
+#define MAX_BATT_VOLT 5
+#define MIN_BATT_VOLT 0
+
+#define MAX_SENSE_COUNT 10
 
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
 #include "configParams.h"
 
+float itmTemperature, temperature;  // Stores the temperature in ºC
+float itmHumidity, humidity;   // Stores the realitve humidity in %RH
+float itmPressure, pressure;   // Stores the pressure in Pa
+float itmCO2, itmNO2, co2Concentration, no2Concentration;
+float pm1, pm2_5, pm10;
+float itmBatteryVoltage, batteryVoltage;
+int batteryLevel, batteryADCLevel;
+bool chargeStatus;
+uint16_t itmChargeCurrent, chargeCurrent;
+
 int status;
 int measure;
-int batteryLevel;
+
+Gas co2(SOCKET_A);
 
 uint8_t errorLW;
+
+int senseCount;
 
 void configureLoRaWAN();
 int getBatteryADCLevel();
@@ -35,142 +61,207 @@ void setup()
 void loop()
 {
 	batteryLevel = PWR.getBatteryLevel();
+#ifdef SHOW_BATT_LEVEL
 	USB.print("Battery: ");
 	USB.println(batteryLevel);
-	//Create a new frame
-	frame.createFrame(BINARY);
-	frame.addSensor(SENSOR_BAT, (uint8_t)123);
-#ifdef _DEBUG
-	frame.showFrame();
 #endif
-	//Switch on LoRaWAN
-	errorLW = LoRaWAN.ON(SOCKET);
-
-	frequencyConfiguration();
-
-#ifdef _DEBUG
-	// Check status
-	if( errorLW == 0 ) 
+	if(batteryLevel > 40)
 	{
-		USB.println(F("1. Switch ON OK"));     
-	}
-	else 
-	{
-		USB.print(F("1. Switch ON error = ")); 
-		USB.println(errorLW, DEC);
-	}
-#endif
+		co2.ON();
+		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
+		co2Concentration = temperature = humidity = pressure = batteryVoltage = chargeCurrent = 0;
+		senseCount = 0;
+		while(senseCount < MAX_SENSE_COUNT)
+		{
+			//Sense the values and start it all over again if there is a value out of range.
+			itmCO2 = co2.getConc();
+			if(itmCO2 < MIN_CO2 || itmCO2 > MAX_CO2)
+				continue;
+			itmTemperature = co2.getTemp();
+			if(itmTemperature < MIN_TEMP || itmTemperature > MAX_TEMP)
+				continue;
+			itmHumidity = co2.getHumidity();
+			if(itmHumidity < MIN_HUM || itmHumidity > MAX_HUM)
+				continue;
+			itmPressure = co2.getPressure();
+			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES)
+				continue;
+			itmBatteryVoltage = PWR.getBatteryVolts();
+			if(itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT)
+				continue;
 
-	errorLW = LoRaWAN.joinABP();
+			co2Concentration += itmCO2;
+			temperature += itmTemperature;
+			humidity += itmHumidity;
+			pressure += itmPressure;
+			//Do not accumulate the following 2 values.
+			batteryVoltage = itmBatteryVoltage;
+			chargeCurrent = 0;
 
-	if(errorLW == 0)
-	{
-		//Send unconfirmed packet
-		errorLW = LoRaWAN.sendUnconfirmed(PORT, frame.buffer, frame.length);
+			senseCount++;
+		}
 
-		// Error messages:
-		/*
-		 * '6' : Module hasn't joined a network
-		 * '5' : Sending error
-		 * '4' : Error with data length    
-		 * '2' : Module didn't response
-		 * '1' : Module communication error   
-		 */
+		co2.OFF();
+
+		co2Concentration /= MAX_SENSE_COUNT;
+		temperature /= MAX_SENSE_COUNT;
+		humidity /= MAX_SENSE_COUNT;
+		pressure /= MAX_SENSE_COUNT;
+
+		//Dumb values
+		no2Concentration = pm1 = pm2_5 = pm10 = 0;
+
+		chargeStatus = 1;
+
+		//Create a new frame
+		frame.createFrame(BINARY);
+		frame.addSensor(SW_VERSION, (uint16_t)VERSION);
+		frame.addSensor(SENSOR_FLAGS, (uint8_t)chargeStatus);
+		//frame.addSensor(SENSOR_BATT_ADC, batteryADCLevel);
+		frame.addSensor(SENSOR_BATT_VOLT, (double)batteryVoltage);
+		frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
+		frame.addSensor(SENSOR_GASES_PRO_CO2, (double)co2Concentration);
+		frame.addSensor(SENSOR_GASES_PRO_TC, (double)temperature);
+		frame.addSensor(SENSOR_GASES_PRO_HUM, (double)humidity);
+		frame.addSensor(SENSOR_GASES_PRO_PRES, (double)pressure);
+		frame.addSensor(SENSOR_GASES_PRO_PM1, (double)pm1);
+		frame.addSensor(SENSOR_GASES_PRO_PM2_5, (double)pm2_5);
+		frame.addSensor(SENSOR_GASES_PRO_PM10, (double)pm10);
+		frame.addSensor(SENSOR_GASES_PRO_NO2, (double)no2Concentration);
+	#ifdef _DEBUG
+		frame.showFrame();
+	#endif
+		//Switch on LoRaWAN
+		errorLW = LoRaWAN.ON(SOCKET);
+
+		frequencyConfiguration();
+
+	#ifdef _DEBUG
 		// Check status
 		if( errorLW == 0 ) 
 		{
-#ifdef _DEBUG
-			USB.println(F("3. Send Unconfirmed packet OK")); 
-			if (LoRaWAN._dataReceived == true)
-			{ 
-				USB.print(F("   There's data on port number "));
-				USB.print(LoRaWAN._port,DEC);
-				USB.print(F(".\r\n   Data: "));
-				USB.println(LoRaWAN._data);
-			}
-#endif
+			USB.println(F("1. Switch ON OK"));     
 		}
 		else 
 		{
-#ifdef _DEBUG
-			USB.print(F("3. Send Unconfirmed packet error = ")); 
+			USB.print(F("1. Switch ON error = ")); 
 			USB.println(errorLW, DEC);
-#endif
 		}
-	}
-	else
-	{
-#ifdef _DEBUG
-		USB.print(F("2. Join network error = ")); 
-		USB.println(errorLW, DEC);
-#endif
-	}
-	
-#ifdef _DEBUG
-	errorLW = LoRaWAN.getRadioFreq();
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio frequency: "));
-		USB.println(LoRaWAN._radioFreq);
-	}
-	else
-		USB.print(F("Could not get the radio frequency."));
-	errorLW = LoRaWAN.getRadioFreqDeviation();
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio frequency deviation: "));
-		USB.println(LoRaWAN._radioFreqDev);
-	}
-	else
-		USB.print(F("Could not get the radio frequency deviation."));
-	errorLW = LoRaWAN.getRadioMode();
-	errorLW = LoRaWAN.getRadioPower();
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio power: "));
-		USB.println(LoRaWAN._radioPower);
-	}
-	else
-		USB.print(F("Could not get the radio power."));
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio mode: "));
-		USB.println(LoRaWAN._radioMode);
-	}
-	else
-		USB.print(F("Could not get the radio mode."));
-	errorLW = LoRaWAN.getRadioBW();
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio bandwidth: "));
-		USB.println(LoRaWAN._radioBW);
-	}
-	else
-		USB.print(F("Could not get the radio bandwidth."));
-	errorLW = LoRaWAN.getRadioSF();
-	if(errorLW == 0)
-	{
-		USB.print(F("Operating radio spreading factor: "));
-		USB.println(LoRaWAN._radioSF);
-	}
-	else
-		USB.print(F("Could not get the radio spreading factor."));
-#endif
+	#endif
 
-	errorLW = LoRaWAN.OFF(SOCKET);
-#ifdef _DEBUG
-	// Check status
-	if( errorLW == 0 ) 
-	{
-		USB.println(F("4. Switch OFF OK"));     
-	}
-	else 
-	{
-		USB.print(F("4. Switch OFF error = ")); 
-		USB.println(errorLW, DEC);
-	}
-#endif
-  PWR.deepSleep("00:00:05:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+		errorLW = LoRaWAN.joinABP();
+
+		if(errorLW == 0)
+		{
+			//Send unconfirmed packet
+			errorLW = LoRaWAN.sendUnconfirmed(PORT, frame.buffer, frame.length);
+
+			// Error messages:
+			/*
+			 * '6' : Module hasn't joined a network
+			 * '5' : Sending error
+			 * '4' : Error with data length    
+			 * '2' : Module didn't response
+			 * '1' : Module communication error   
+			 */
+			// Check status
+			if( errorLW == 0 ) 
+			{
+	#ifdef _DEBUG
+				USB.println(F("3. Send Unconfirmed packet OK")); 
+				if (LoRaWAN._dataReceived == true)
+				{ 
+					USB.print(F("   There's data on port number "));
+					USB.print(LoRaWAN._port,DEC);
+					USB.print(F(".\r\n   Data: "));
+					USB.println(LoRaWAN._data);
+				}
+	#endif
+			}
+			else 
+			{
+	#ifdef _DEBUG
+				USB.print(F("3. Send Unconfirmed packet error = ")); 
+				USB.println(errorLW, DEC);
+	#endif
+			}
+		}
+		else
+		{
+	#ifdef _DEBUG
+			USB.print(F("2. Join network error = ")); 
+			USB.println(errorLW, DEC);
+	#endif
+		}
+		
+	#ifdef _DEBUG
+		errorLW = LoRaWAN.getRadioFreq();
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio frequency: "));
+			USB.println(LoRaWAN._radioFreq);
+		}
+		else
+			USB.print(F("Could not get the radio frequency."));
+		errorLW = LoRaWAN.getRadioFreqDeviation();
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio frequency deviation: "));
+			USB.println(LoRaWAN._radioFreqDev);
+		}
+		else
+			USB.print(F("Could not get the radio frequency deviation."));
+		errorLW = LoRaWAN.getRadioMode();
+		errorLW = LoRaWAN.getRadioPower();
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio power: "));
+			USB.println(LoRaWAN._radioPower);
+		}
+		else
+			USB.print(F("Could not get the radio power."));
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio mode: "));
+			USB.println(LoRaWAN._radioMode);
+		}
+		else
+			USB.print(F("Could not get the radio mode."));
+		errorLW = LoRaWAN.getRadioBW();
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio bandwidth: "));
+			USB.println(LoRaWAN._radioBW);
+		}
+		else
+			USB.print(F("Could not get the radio bandwidth."));
+		errorLW = LoRaWAN.getRadioSF();
+		if(errorLW == 0)
+		{
+			USB.print(F("Operating radio spreading factor: "));
+			USB.println(LoRaWAN._radioSF);
+		}
+		else
+			USB.print(F("Could not get the radio spreading factor."));
+	#endif
+
+		errorLW = LoRaWAN.OFF(SOCKET);
+	#ifdef _DEBUG
+		// Check status
+		if( errorLW == 0 ) 
+		{
+			USB.println(F("4. Switch OFF OK"));     
+		}
+		else 
+		{
+			USB.print(F("4. Switch OFF error = ")); 
+			USB.println(errorLW, DEC);
+		}
+	#endif
+		PWR.deepSleep("00:00:03:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+  	}
+	else
+		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
 }
 
 int getBatteryADCLevel()
