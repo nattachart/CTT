@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 6
+#define VERSION 7
 
 #define _DEBUG
 
@@ -71,6 +71,10 @@ float chargeCurrentCount;
 int status;
 int measure;
 
+int co2MaxCount, tempMaxCount, presMaxCount, humMaxCount, voltMaxCount, chgMaxCount;
+bool outliers;
+
+
 // CO2 Sensor must be connected physically in SOCKET_2 (SOCKET_E on Smart Environment P&S)
 CO2SensorClass CO2Sensor;
 
@@ -119,32 +123,80 @@ void loop()
 		chargeCurrentCount = 0;
 		senseCount = 0;
 		battVoltOutOfRange = true;
-		while(senseCount < MAX_SENSE_COUNT)
+		co2MaxCount = tempMaxCount = presMaxCount = humMaxCount = voltMaxCount = chgMaxCount = 0;
+		while(senseCount < MAX_SENSE_COUNT
+				&& co2MaxCount < MAX_SENSE_COUNT
+				&& tempMaxCount < MAX_SENSE_COUNT
+				&& presMaxCount < MAX_SENSE_COUNT
+				&& humMaxCount < MAX_SENSE_COUNT
+				&& voltMaxCount < MAX_SENSE_COUNT
+				&& chgMaxCount < MAX_SENSE_COUNT)
 		{
+			outliers = false;
+#ifdef _DEBUG
+			USB.print("senseCount: ");
+			USB.println(senseCount);
+#endif
 			//Sense the values and start it all over again if there is a value out of range.
 			itmCO2 = CO2Sensor.readConcentration();
-			if(itmCO2 < MIN_CO2 || itmCO2 > MAX_CO2)
-				continue;
+#ifdef _DEBUG
+			USB.print("co2: ");
+			USB.println(itmCO2);
+#endif
+			if(itmCO2 < MIN_CO2 || itmCO2 > MAX_CO2){
+				outliers = true;
+				co2MaxCount++;
+			}
 			itmTemperature = Gases.getTemperature();
-			if(itmTemperature < MIN_TEMP || itmTemperature > MAX_TEMP)
-				continue;
+#ifdef _DEBUG
+			USB.print("temperature: ");
+			USB.println(itmTemperature);
+#endif
+			if(itmTemperature < MIN_TEMP || itmTemperature > MAX_TEMP){
+				outliers = true;
+				tempMaxCount++;
+			}
 			itmHumidity = Gases.getHumidity();
-			if(itmHumidity < MIN_HUM || itmHumidity > MAX_HUM)
-				continue;
+#ifdef _DEBUG
+			USB.print("humidity: ");
+			USB.println(itmHumidity);
+#endif
+			if(itmHumidity < MIN_HUM || itmHumidity > MAX_HUM){
+				outliers = true;
+				humMaxCount++;
+			}
 			itmPressure = Gases.getPressure();
-			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES)
-				continue;
+#ifdef _DEBUG
+			USB.print("pressure: ");
+			USB.println(itmPressure);
+#endif
+			if(itmPressure < MIN_PRES || itmPressure > MAX_PRES){
+				outliers = true;
+				presMaxCount++;
+			}
 			itmBatteryVoltage = PWR.getBatteryVolts();
-			if((itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT) && battVoltOutOfRange)
-				continue;
+#ifdef _DEBUG
+			USB.print("volt: ");
+			USB.println(itmBatteryVoltage);
+#endif
+			if((itmBatteryVoltage < MIN_BATT_VOLT || itmBatteryVoltage > MAX_BATT_VOLT) && battVoltOutOfRange){
+				outliers = true;
+				voltMaxCount++;
+			}
 			else if(battVoltOutOfRange)
 			{
 				battVoltOutOfRange = false;
 				batteryVoltage = itmBatteryVoltage;
 			}
 			itmChargeCurrent = PWR.getBatteryCurrent();
-			if(itmChargeCurrent < MIN_CHARGE_CURRENT || itmChargeCurrent > MAX_CHARGE_CURRENT)
-				continue;
+#ifdef _DEBUG
+			USB.print("charge current: ");
+			USB.println(itmChargeCurrent);
+#endif
+			if(itmChargeCurrent < MIN_CHARGE_CURRENT || itmChargeCurrent > MAX_CHARGE_CURRENT){
+				outliers = true;
+				chgMaxCount++;
+			}
 
 			co2Concentration += itmCO2;
 			temperature += itmTemperature;
@@ -156,7 +208,8 @@ void loop()
 				chargeCurrentCount++;
 			}
 
-			senseCount++;
+			if(!outliers)
+				senseCount++;
 		}
 
 		co2Concentration /= MAX_SENSE_COUNT;
