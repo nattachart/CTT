@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 2
+#define VERSION 3
 
 #define PORT 3 //Port to use in Back-End: from 1 to 223
 #define SOCKET SOCKET0
@@ -24,6 +24,8 @@
 
 #define MAX_SENSE_COUNT 10
 
+#define MAX_TEST_COUNT 255
+
 #include <WaspSensorGas_Pro.h>
 #include <WaspFrame.h>
 #include <WaspLoRaWAN.h>
@@ -38,6 +40,9 @@ float itmBatteryVoltage, batteryVoltage;
 int batteryLevel, batteryADCLevel;
 bool chargeStatus;
 uint16_t itmChargeCurrent, chargeCurrent;
+uint8_t testCount;
+
+int i;
 
 int status;
 int measure;
@@ -51,15 +56,20 @@ int senseCount;
 void configureLoRaWAN();
 int getBatteryADCLevel();
 void frequencyConfiguration();
+uint8_t hexCharsToByte(char leftHexC, char rightHexC);
 
 void setup()
 {
 	configureLoRaWAN();
 	frame.setID(DEVICE_ID);
+	testCount = 0;
 }
 
 void loop()
 {
+	//if(testCount == MAX_TEST_COUNT)
+		//testCount = 0;
+
 	batteryLevel = PWR.getBatteryLevel();
 #ifdef SHOW_BATT_LEVEL
 	USB.print("Battery: ");
@@ -71,6 +81,7 @@ void loop()
 		PWR.deepSleep("00:00:02:10", RTC_OFFSET, RTC_ALM1_MODE1, ALL_ON);
 		co2Concentration = temperature = humidity = pressure = batteryVoltage = chargeCurrent = 0;
 		senseCount = 0;
+
 		while(senseCount < MAX_SENSE_COUNT)
 		{
 			//Sense the values and start it all over again if there is a value out of range.
@@ -101,6 +112,7 @@ void loop()
 			senseCount++;
 		}
 
+
 		co2.OFF();
 
 		co2Concentration /= MAX_SENSE_COUNT;
@@ -115,19 +127,24 @@ void loop()
 
 		//Create a new frame
 		frame.createFrame(BINARY);
+    frame.addSensor(SENSOR_BAT, (int)testCount);
+    frame.addSensor(SENSOR_GP_CO2, (double)co2Concentration);
+/*
 		frame.addSensor(SW_VERSION, (uint16_t)VERSION);
+		//frame.addSensor(SENSOR_FLAGS, (uint8_t)testCount);
 		frame.addSensor(SENSOR_FLAGS, (uint8_t)chargeStatus);
 		//frame.addSensor(SENSOR_BATT_ADC, batteryADCLevel);
 		frame.addSensor(SENSOR_BATT_VOLT, (double)batteryVoltage);
 		frame.addSensor(SENSOR_SOLAR_CHARGE_CURRENT, chargeCurrent);
-		frame.addSensor(SENSOR_GASES_PRO_CO2, (double)co2Concentration);
-		frame.addSensor(SENSOR_GASES_PRO_TC, (double)temperature);
-		frame.addSensor(SENSOR_GASES_PRO_HUM, (double)humidity);
-		frame.addSensor(SENSOR_GASES_PRO_PRES, (double)pressure);
-		frame.addSensor(SENSOR_GASES_PRO_PM1, (double)pm1);
-		frame.addSensor(SENSOR_GASES_PRO_PM2_5, (double)pm2_5);
-		frame.addSensor(SENSOR_GASES_PRO_PM10, (double)pm10);
-		frame.addSensor(SENSOR_GASES_PRO_NO2, (double)no2Concentration);
+		frame.addSensor(SENSOR_GP_CO2, (double)co2Concentration);
+		frame.addSensor(SENSOR_GP_TC, (double)temperature);
+		frame.addSensor(SENSOR_GP_HUM, (double)humidity);
+		frame.addSensor(SENSOR_GP_PRES, (double)pressure);
+		frame.addSensor(SENSOR_GP_PM1, (double)pm1);
+		frame.addSensor(SENSOR_GP_PM2_5, (double)pm2_5);
+		frame.addSensor(SENSOR_GP_PM10, (double)pm10);
+		frame.addSensor(SENSOR_GP_NO2, (double)no2Concentration);
+*/
 	#ifdef _DEBUG
 		frame.showFrame();
 	#endif
@@ -169,13 +186,22 @@ void loop()
 			{
 	#ifdef _DEBUG
 				USB.println(F("3. Send Unconfirmed packet OK")); 
-				if (LoRaWAN._dataReceived == true)
+				if (LoRaWAN._dataReceived)
 				{ 
 					USB.print(F("   There's data on port number "));
 					USB.print(LoRaWAN._port,DEC);
 					USB.print(F(".\r\n   Data: "));
-					USB.println(LoRaWAN._data);
+          for(i=0; i < 101; i++){
+            USB.print(i);
+            USB.print(":");
+					  USB.print(LoRaWAN._data[i]);
+            USB.print(",");
+          }
+          USB.println("");
+					testCount = (uint8_t)hexCharsToByte(LoRaWAN._data[0], LoRaWAN._data[1]); //Test only the first character
 				}
+       USB.print("testCount: ");
+       USB.println((int)testCount);
 	#endif
 			}
 			else 
@@ -262,6 +288,36 @@ void loop()
   	}
 	else
 		PWR.deepSleep("00:01:00:00", RTC_OFFSET, RTC_ALM1_MODE1, ALL_OFF);
+	
+	//testCount++;
+}
+
+uint8_t hexCharToInt(char c){
+  switch(c){
+    case '0': return 0;
+    case '1': return 1;
+    case '2': return 2;
+    case '3': return 3;
+    case '4': return 4;
+    case '5': return 5;
+    case '6': return 6;
+    case '7': return 7;
+    case '8': return 8;
+    case '9': return 9;
+    case 'A': case 'a': return 10;
+    case 'B': case 'b': return 11;
+    case 'C': case 'c': return 12;
+    case 'D': case 'd': return 13;
+    case 'E': case 'e': return 14;
+    case 'F': case 'f': return 15;
+  }
+}
+
+uint8_t hexCharsToByte(char leftHexC, char rightHexC){
+  uint8_t leftHex = hexCharToInt(leftHexC);
+  uint8_t rightHex = hexCharToInt(rightHexC);
+  uint8_t num = (leftHex << 4) | rightHex;
+  return num;
 }
 
 int getBatteryADCLevel()
