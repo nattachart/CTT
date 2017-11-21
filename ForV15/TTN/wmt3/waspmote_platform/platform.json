@@ -1,0 +1,46 @@
+{
+  "name": "waspmote",
+  "title": "Waspmote Atmel AVR",
+  "description": "Atmel AVR 8- and 32-bit MCUs deliver a unique combination of performance, power efficiency and design flexibility. Optimized to speed time to market-and easily adapt to new ones-they are based on the industrys most code-efficient architecture for C and assembly programming.",
+  "url": "http://www.atmel.com/products/microcontrollers/avr/default.aspx",
+  "homepage": "http://platformio.org/platforms/atmelavr",
+  "license": "Apache-2.0",
+  "engines": {
+    "platformio": "^3.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "version": "1.5.0",
+  "packageRepositories": [
+    "http://platformio.nattachart.esy.es/packages-manifest/manifest.json"
+  ],
+  "frameworks": {
+    "waspmote": {
+      "package": "framework-waspmote",
+      "script": "builder/frameworks/waspmote.py"
+    }
+  },
+  "packages": {
+    "toolchain-atmelavr": {
+      "type": "toolchain",
+      "version": "~1.40902.0"
+    },
+    "framework-waspmote": {
+      "type": "framework",
+      "optional": true,
+      "version": "~1.5.0"
+    },
+    "tool-avrdude": {
+      "type": "uploader",
+      "optional": true,
+      "version": "~1.60300.0"
+    },
+    "tool-micronucleus": {
+      "type": "uploader",
+      "optional": true,
+      "version": "~1.200.0"
+    }
+  }
+}
