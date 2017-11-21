@@ -1,0 +1,2014 @@
+H#
+API v027
+NDIR CO2 example
+A temperature, humidity and pressure sensor in socket 2 is also required
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:35:01
+Gas concentration: 1010.9085083007 ppm
+Temperature: 26.7199993133 Celsius degrees
+RH: 40.5849609375 %
+Pressure: 99424.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:38:02
+Gas concentration: 1010.7645263671 ppm
+Temperature: 26.6900005340 Celsius degrees
+RH: 40.8857421875 %
+Pressure: 99424.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:41:03
+Gas concentration: 1010.5245361328 ppm
+Temperature: 26.6800003051 Celsius degrees
+RH: 40.7392578125 %
+Pressure: 99411.6562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:44:04
+Gas concentration: 986.1425170898 ppm
+Temperature: 26.6299991607 Celsius degrees
+RH: 40.8916015625 %
+Pressure: 99410.1718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:47:05
+Gas concentration: 1108.5800781250 ppm
+Temperature: 26.6100006103 Celsius degrees
+RH: 41.2236328125 %
+Pressure: 99405.8984375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:50:06
+Gas concentration: 1157.4398193359 ppm
+Temperature: 26.6700000762 Celsius degrees
+RH: 41.0410156250 %
+Pressure: 99400.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:53:07
+Gas concentration: 1280.5971679687 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 40.8339843750 %
+Pressure: 99405.8437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:56:08
+Gas concentration: 1133.1058349609 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.7246093750 %
+Pressure: 99393.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 15:59:09
+Gas concentration: 1059.4802246093 ppm
+Temperature: 26.7199993133 Celsius degrees
+RH: 40.6113281250 %
+Pressure: 99395.1250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:02:10
+Gas concentration: 1378.6047363281 ppm
+Temperature: 26.7700004577 Celsius degrees
+RH: 40.8134765625 %
+Pressure: 99385.1562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:05:11
+Gas concentration: 1599.0976562500 ppm
+Temperature: 26.8099994659 Celsius degrees
+RH: 42.2314453125 %
+Pressure: 99393.9296875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:08:12
+Gas concentration: 1304.8350830078 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.7578125000 %
+Pressure: 99389.5390625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:11:13
+Gas concentration: 1206.3476562500 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.7685546875 %
+Pressure: 99374.4375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:14:14
+Gas concentration: 1133.0098876953 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.8896484375 %
+Pressure: 99379.0546875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:17:15
+Gas concentration: 1010.2846069335 ppm
+Temperature: 26.6399993896 Celsius degrees
+RH: 42.2431640625 %
+Pressure: 99370.5000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:20:16
+Gas concentration: 1700.8009033203 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 42.3750000000 %
+Pressure: 99368.1093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:23:17
+Gas concentration: 1010.2846069335 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.7021484375 %
+Pressure: 99366.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:26:18
+Gas concentration: 1059.2403564453 ppm
+Temperature: 26.7099990844 Celsius degrees
+RH: 40.8632812500 %
+Pressure: 99356.1406250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:29:19
+Gas concentration: 1157.1518554687 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 41.4785156250 %
+Pressure: 99351.5156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:32:20
+Gas concentration: 1034.8585205078 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 40.6132812500 %
+Pressure: 99352.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:35:21
+Gas concentration: 1525.1840820312 ppm
+Temperature: 26.7999992370 Celsius degrees
+RH: 42.6005859375 %
+Pressure: 99339.2500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:38:22
+Gas concentration: 1132.7700195312 ppm
+Temperature: 26.7900009155 Celsius degrees
+RH: 40.8183593750 %
+Pressure: 99340.1093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:41:23
+Gas concentration: 985.9025878906 ppm
+Temperature: 26.7999992370 Celsius degrees
+RH: 40.8808593750 %
+Pressure: 99335.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:44:24
+Gas concentration: 1108.1960449218 ppm
+Temperature: 26.7500000000 Celsius degrees
+RH: 41.0263671875 %
+Pressure: 99327.9140625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:47:25
+Gas concentration: 1108.1960449218 ppm
+Temperature: 26.7800006866 Celsius degrees
+RH: 40.6142578125 %
+Pressure: 99327.7968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:50:26
+Gas concentration: 1255.6392822265 ppm
+Temperature: 26.8600006103 Celsius degrees
+RH: 40.9306640625 %
+Pressure: 99317.7031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:53:27
+Gas concentration: 1258.8551025390 ppm
+Temperature: 26.7999992370 Celsius degrees
+RH: 40.7617187500 %
+Pressure: 99330.3593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:56:28
+Gas concentration: 1697.3931884765 ppm
+Temperature: 26.8400001525 Celsius degrees
+RH: 41.4121093750 %
+Pressure: 99328.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 16:59:29
+Gas concentration: 1059.2403564453 ppm
+Temperature: 26.8299999237 Celsius degrees
+RH: 40.6074218750 %
+Pressure: 99325.7343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:02:30
+Gas concentration: 1062.7438964843 ppm
+Temperature: 26.7900009155 Celsius degrees
+RH: 40.6699218750 %
+Pressure: 99317.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:05:31
+Gas concentration: 1181.5338134765 ppm
+Temperature: 26.7800006866 Celsius degrees
+RH: 40.6367187500 %
+Pressure: 99309.0468750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:08:32
+Gas concentration: 1304.5952148437 ppm
+Temperature: 26.7099990844 Celsius degrees
+RH: 40.9091796875 %
+Pressure: 99306.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:11:33
+Gas concentration: 1307.5708007812 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 40.7685546875 %
+Pressure: 99307.4531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:14:34
+Gas concentration: 985.9025878906 ppm
+Temperature: 26.7700004577 Celsius degrees
+RH: 40.3798828125 %
+Pressure: 99309.1562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:17:35
+Gas concentration: 1160.7995605468 ppm
+Temperature: 26.6399993896 Celsius degrees
+RH: 41.0253906250 %
+Pressure: 99304.7265625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:20:36
+Gas concentration: 1034.8585205078 ppm
+Temperature: 26.6100006103 Celsius degrees
+RH: 40.9453125000 %
+Pressure: 99294.2421875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:23:37
+Gas concentration: 985.9025878906 ppm
+Temperature: 26.5900001525 Celsius degrees
+RH: 40.7412109375 %
+Pressure: 99293.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:26:38
+Gas concentration: 1010.2846069335 ppm
+Temperature: 26.6000003814 Celsius degrees
+RH: 40.5107421875 %
+Pressure: 99287.1718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:29:39
+Gas concentration: 1010.2846069335 ppm
+Temperature: 26.6200008392 Celsius degrees
+RH: 40.8349609375 %
+Pressure: 99287.9140625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:32:40
+Gas concentration: 1059.2403564453 ppm
+Temperature: 26.6399993896 Celsius degrees
+RH: 41.0820312500 %
+Pressure: 99283.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:35:41
+Gas concentration: 1255.6392822265 ppm
+Temperature: 26.6399993896 Celsius degrees
+RH: 41.6601562500 %
+Pressure: 99281.5859375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:38:42
+Gas concentration: 1034.8585205078 ppm
+Temperature: 26.6499996185 Celsius degrees
+RH: 40.8154296875 %
+Pressure: 99268.9296875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:41:43
+Gas concentration: 961.5207519531 ppm
+Temperature: 26.6499996185 Celsius degrees
+RH: 40.8476562500 %
+Pressure: 99277.9375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:44:44
+Gas concentration: 961.5207519531 ppm
+Temperature: 26.7000007629 Celsius degrees
+RH: 40.7402343750 %
+Pressure: 99268.5781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:47:45
+Gas concentration: 1083.8142089843 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 40.4550781250 %
+Pressure: 99266.5156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:50:46
+Gas concentration: 1202.6998291015 ppm
+Temperature: 26.7900009155 Celsius degrees
+RH: 43.0693359375 %
+Pressure: 99259.8359375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:53:47
+Gas concentration: 1112.1798095703 ppm
+Temperature: 26.8299999237 Celsius degrees
+RH: 40.5849609375 %
+Pressure: 99253.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:56:48
+Gas concentration: 1181.5338134765 ppm
+Temperature: 26.8500003814 Celsius degrees
+RH: 40.6318359375 %
+Pressure: 99249.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 17:59:49
+Gas concentration: 1304.5952148437 ppm
+Temperature: 26.9200000762 Celsius degrees
+RH: 40.7607421875 %
+Pressure: 99250.7343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:02:50
+Gas concentration: 1157.1518554687 ppm
+Temperature: 26.9400005340 Celsius degrees
+RH: 40.3164062500 %
+Pressure: 99259.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:05:51
+Gas concentration: 1255.6392822265 ppm
+Temperature: 26.9300003051 Celsius degrees
+RH: 40.6494140625 %
+Pressure: 99249.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:08:52
+Gas concentration: 912.3729858398 ppm
+Temperature: 26.8400001525 Celsius degrees
+RH: 40.2636718750 %
+Pressure: 99254.1250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:11:53
+Gas concentration: 887.7990722656 ppm
+Temperature: 26.7500000000 Celsius degrees
+RH: 40.2675781250 %
+Pressure: 99238.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:14:54
+Gas concentration: 912.3729858398 ppm
+Temperature: 26.6599998474 Celsius degrees
+RH: 40.4375000000 %
+Pressure: 99237.6406250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:17:55
+Gas concentration: 912.3729858398 ppm
+Temperature: 26.6000003814 Celsius degrees
+RH: 40.8105468750 %
+Pressure: 99241.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:20:56
+Gas concentration: 887.7990722656 ppm
+Temperature: 26.5200004577 Celsius degrees
+RH: 40.5361328125 %
+Pressure: 99234.2734375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:23:57
+Gas concentration: 887.7990722656 ppm
+Temperature: 26.4599990844 Celsius degrees
+RH: 40.7080078125 %
+Pressure: 99229.3750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:26:58
+Gas concentration: 887.7990722656 ppm
+Temperature: 26.4099998474 Celsius degrees
+RH: 40.9609375000 %
+Pressure: 99233.2656250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:29:59
+Gas concentration: 887.7990722656 ppm
+Temperature: 26.3600006103 Celsius degrees
+RH: 41.2011718750 %
+Pressure: 99229.2187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:33:00
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.3299999237 Celsius degrees
+RH: 41.0517578125 %
+Pressure: 99225.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:36:01
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.2800006866 Celsius degrees
+RH: 40.9150390625 %
+Pressure: 99231.4687500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:39:02
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.2500000000 Celsius degrees
+RH: 41.1914062500 %
+Pressure: 99221.9687500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:42:03
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.2000007629 Celsius degrees
+RH: 41.5087890625 %
+Pressure: 99224.1328125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:45:04
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.1700000762 Celsius degrees
+RH: 41.3164062500 %
+Pressure: 99221.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:48:05
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.1200008392 Celsius degrees
+RH: 41.1230468750 %
+Pressure: 99227.3828125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:51:06
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.1000003814 Celsius degrees
+RH: 41.4443359375 %
+Pressure: 99221.1718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:54:07
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.0799999237 Celsius degrees
+RH: 41.5644531250 %
+Pressure: 99221.4062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 18:57:08
+Gas concentration: 863.4172363281 ppm
+Temperature: 26.0699996948 Celsius degrees
+RH: 41.3740234375 %
+Pressure: 99219.6953125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:00:09
+Gas concentration: 838.4594116210 ppm
+Temperature: 26.0400009155 Celsius degrees
+RH: 41.4492187500 %
+Pressure: 99223.5625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:03:10
+Gas concentration: 838.4594116210 ppm
+Temperature: 26.0100002288 Celsius degrees
+RH: 41.5712890625 %
+Pressure: 99209.4453125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:06:11
+Gas concentration: 838.5074462890 ppm
+Temperature: 25.9899997711 Celsius degrees
+RH: 41.4433593750 %
+Pressure: 99212.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:09:12
+Gas concentration: 838.4594116210 ppm
+Temperature: 25.9899997711 Celsius degrees
+RH: 41.6679687500 %
+Pressure: 99206.0000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:12:13
+Gas concentration: 838.4594116210 ppm
+Temperature: 25.9699993133 Celsius degrees
+RH: 41.4101562500 %
+Pressure: 99200.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:15:14
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.9500007629 Celsius degrees
+RH: 41.3857421875 %
+Pressure: 99201.8437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:18:15
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.9500007629 Celsius degrees
+RH: 41.3085937500 %
+Pressure: 99210.8359375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:21:16
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.9300003051 Celsius degrees
+RH: 41.4169921875 %
+Pressure: 99206.4531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:24:17
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.9300003051 Celsius degrees
+RH: 41.2392578125 %
+Pressure: 99194.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:27:18
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8999996185 Celsius degrees
+RH: 41.3925781250 %
+Pressure: 99205.7109375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:30:19
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8999996185 Celsius degrees
+RH: 41.3251953125 %
+Pressure: 99210.3203125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:33:20
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8799991607 Celsius degrees
+RH: 41.3789062500 %
+Pressure: 99203.2656250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:36:21
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8700008392 Celsius degrees
+RH: 41.4111328125 %
+Pressure: 99197.1718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:39:22
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8700008392 Celsius degrees
+RH: 41.3994140625 %
+Pressure: 99209.5781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:42:23
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8700008392 Celsius degrees
+RH: 41.3994140625 %
+Pressure: 99207.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:45:24
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8600006103 Celsius degrees
+RH: 41.6113281250 %
+Pressure: 99208.8359375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:48:25
+Gas concentration: 795.4552001953 ppm
+Temperature: 25.8500003814 Celsius degrees
+RH: 41.4091796875 %
+Pressure: 99201.7812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:51:26
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.8299999237 Celsius degrees
+RH: 41.7539062500 %
+Pressure: 99210.7734375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:54:27
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 41.4316406250 %
+Pressure: 99204.5625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 19:57:28
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.8199996948 Celsius degrees
+RH: 41.4296875000 %
+Pressure: 99203.7109375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:00:29
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.8199996948 Celsius degrees
+RH: 41.4619140625 %
+Pressure: 99202.8593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:03:30
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.8199996948 Celsius degrees
+RH: 41.3837890625 %
+Pressure: 99212.7031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:06:31
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.8299999237 Celsius degrees
+RH: 41.3847656250 %
+Pressure: 99209.0625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:09:32
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 41.2646484375 %
+Pressure: 99214.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:12:33
+Gas concentration: 789.3115844726 ppm
+Temperature: 25.9400005340 Celsius degrees
+RH: 41.1621093750 %
+Pressure: 99213.5078125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:15:34
+Gas concentration: 789.3115844726 ppm
+Temperature: 26.0499992370 Celsius degrees
+RH: 40.8857421875 %
+Pressure: 99207.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:18:35
+Gas concentration: 789.3115844726 ppm
+Temperature: 26.2000007629 Celsius degrees
+RH: 40.8730468750 %
+Pressure: 99214.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:21:36
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.2999992370 Celsius degrees
+RH: 40.2265625000 %
+Pressure: 99219.7968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:24:37
+Gas concentration: 789.3115844726 ppm
+Temperature: 26.3999996185 Celsius degrees
+RH: 40.1015625000 %
+Pressure: 99227.0468750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:27:38
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.4899997711 Celsius degrees
+RH: 39.9970703125 %
+Pressure: 99213.0781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:30:39
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.5699996948 Celsius degrees
+RH: 39.8154296875 %
+Pressure: 99210.7031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:33:40
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.6399993896 Celsius degrees
+RH: 40.0556640625 %
+Pressure: 99206.5781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:36:41
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.6800003051 Celsius degrees
+RH: 39.5585937500 %
+Pressure: 99204.3984375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:39:42
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.7500000000 Celsius degrees
+RH: 39.6757812500 %
+Pressure: 99206.6015625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:42:43
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.7999992370 Celsius degrees
+RH: 39.3457031250 %
+Pressure: 99202.5937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:45:44
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.8400001525 Celsius degrees
+RH: 39.2802734375 %
+Pressure: 99203.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:48:45
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.8700008392 Celsius degrees
+RH: 39.2060546875 %
+Pressure: 99210.1562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:51:46
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.8899993896 Celsius degrees
+RH: 39.1406250000 %
+Pressure: 99207.2343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:54:47
+Gas concentration: 764.7857666015 ppm
+Temperature: 26.8999996185 Celsius degrees
+RH: 39.1083984375 %
+Pressure: 99205.4062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 20:57:48
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.9099998474 Celsius degrees
+RH: 39.0761718750 %
+Pressure: 99207.9687500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:00:49
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.9099998474 Celsius degrees
+RH: 39.0644531250 %
+Pressure: 99198.2265625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:03:50
+Gas concentration: 764.7376708984 ppm
+Temperature: 26.8999996185 Celsius degrees
+RH: 39.0849609375 %
+Pressure: 99199.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:06:51
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.8700008392 Celsius degrees
+RH: 39.0957031250 %
+Pressure: 99211.0078125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:09:52
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.8600006103 Celsius degrees
+RH: 39.3964843750 %
+Pressure: 99208.3281250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:12:53
+Gas concentration: 740.1159057617 ppm
+Temperature: 26.8600006103 Celsius degrees
+RH: 39.0927734375 %
+Pressure: 99211.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:15:54
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.8400001525 Celsius degrees
+RH: 39.0810546875 %
+Pressure: 99213.9296875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:18:55
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.8199996948 Celsius degrees
+RH: 39.1240234375 %
+Pressure: 99206.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:21:56
+Gas concentration: 740.1159057617 ppm
+Temperature: 26.8099994659 Celsius degrees
+RH: 39.1220703125 %
+Pressure: 99206.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:24:57
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.8099994659 Celsius degrees
+RH: 38.9101562500 %
+Pressure: 99208.8125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:27:58
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.7900009155 Celsius degrees
+RH: 39.1777343750 %
+Pressure: 99205.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:30:59
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.7900009155 Celsius degrees
+RH: 39.2089843750 %
+Pressure: 99203.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:34:00
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 39.1855468750 %
+Pressure: 99216.3437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:37:01
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.7600002288 Celsius degrees
+RH: 38.9736328125 %
+Pressure: 99203.9218750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:40:02
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.7399997711 Celsius degrees
+RH: 38.9375000000 %
+Pressure: 99216.5859375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:43:03
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.7099990844 Celsius degrees
+RH: 39.2255859375 %
+Pressure: 99221.0937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:46:04
+Gas concentration: 715.6379394531 ppm
+Temperature: 26.7000007629 Celsius degrees
+RH: 39.1240234375 %
+Pressure: 99225.8281250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:49:05
+Gas concentration: 740.1638183593 ppm
+Temperature: 26.6800003051 Celsius degrees
+RH: 39.2109375000 %
+Pressure: 99233.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:52:06
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.6700000762 Celsius degrees
+RH: 39.3662109375 %
+Pressure: 99232.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:55:07
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.6499996185 Celsius degrees
+RH: 39.2421875000 %
+Pressure: 99230.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 21:58:08
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.6299991607 Celsius degrees
+RH: 39.2187500000 %
+Pressure: 99244.0781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:01:09
+Gas concentration: 715.6379394531 ppm
+Temperature: 26.6100006103 Celsius degrees
+RH: 39.2177734375 %
+Pressure: 99246.0234375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:04:10
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.6100006103 Celsius degrees
+RH: 39.2500000000 %
+Pressure: 99252.3515625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:07:11
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5900001525 Celsius degrees
+RH: 39.2480468750 %
+Pressure: 99263.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:10:12
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5599994659 Celsius degrees
+RH: 39.2910156250 %
+Pressure: 99258.9140625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:13:13
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5499992370 Celsius degrees
+RH: 39.5693359375 %
+Pressure: 99263.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:16:14
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5400009155 Celsius degrees
+RH: 39.3212890625 %
+Pressure: 99267.1796875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:19:15
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5100002288 Celsius degrees
+RH: 39.3085937500 %
+Pressure: 99265.5625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:22:16
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.5000000000 Celsius degrees
+RH: 39.3076171875 %
+Pressure: 99279.0625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:25:17
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.4899997711 Celsius degrees
+RH: 39.5957031250 %
+Pressure: 99275.6406250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:28:18
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.4699993133 Celsius degrees
+RH: 39.2822265625 %
+Pressure: 99285.5000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:31:19
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.4599990844 Celsius degrees
+RH: 39.2812500000 %
+Pressure: 99304.3593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:34:20
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.4400005340 Celsius degrees
+RH: 39.1689453125 %
+Pressure: 99283.9062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:37:21
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.4099998474 Celsius degrees
+RH: 39.2783203125 %
+Pressure: 99300.0937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:40:22
+Gas concentration: 711.8944091796 ppm
+Temperature: 26.4200000762 Celsius degrees
+RH: 39.2773437500 %
+Pressure: 99295.8203125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:43:23
+Gas concentration: 691.0640869140 ppm
+Temperature: 26.3899993896 Celsius degrees
+RH: 39.2880859375 %
+Pressure: 99303.8515625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:46:24
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.3799991607 Celsius degrees
+RH: 39.2861328125 %
+Pressure: 99295.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:49:25
+Gas concentration: 691.0640869140 ppm
+Temperature: 26.3600006103 Celsius degrees
+RH: 39.3066406250 %
+Pressure: 99314.7968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:52:26
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.3600006103 Celsius degrees
+RH: 39.3281250000 %
+Pressure: 99303.3437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:55:27
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.3400001525 Celsius degrees
+RH: 39.2373046875 %
+Pressure: 99306.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 22:58:28
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.3299999237 Celsius degrees
+RH: 39.3925781250 %
+Pressure: 99311.5703125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:01:29
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.3099994659 Celsius degrees
+RH: 39.3808593750 %
+Pressure: 99324.1015625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:04:30
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.2999992370 Celsius degrees
+RH: 39.3916015625 %
+Pressure: 99327.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:07:31
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.2800006866 Celsius degrees
+RH: 39.3554687500 %
+Pressure: 99330.5390625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:10:32
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.2800006866 Celsius degrees
+RH: 39.2666015625 %
+Pressure: 99326.1562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:13:33
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.2600002288 Celsius degrees
+RH: 39.3769531250 %
+Pressure: 99320.0546875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:16:34
+Gas concentration: 715.5900878906 ppm
+Temperature: 26.2500000000 Celsius degrees
+RH: 39.3632812500 %
+Pressure: 99321.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:19:35
+Gas concentration: 711.0303955078 ppm
+Temperature: 26.2399997711 Celsius degrees
+RH: 39.3183593750 %
+Pressure: 99321.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:22:36
+Gas concentration: 691.0640869140 ppm
+Temperature: 26.2399997711 Celsius degrees
+RH: 39.3398437500 %
+Pressure: 99309.5703125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:25:37
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.2099990844 Celsius degrees
+RH: 39.5390625000 %
+Pressure: 99318.5625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:28:38
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.2099990844 Celsius degrees
+RH: 39.2822265625 %
+Pressure: 99315.1484375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:31:39
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.2099990844 Celsius degrees
+RH: 39.2587890625 %
+Pressure: 99313.4375000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:34:40
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1900005340 Celsius degrees
+RH: 39.2246093750 %
+Pressure: 99314.4062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:37:41
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1700000762 Celsius degrees
+RH: 38.8671875000 %
+Pressure: 99310.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:40:42
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1599998474 Celsius degrees
+RH: 39.0107421875 %
+Pressure: 99310.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:43:43
+Gas concentration: 711.7504272460 ppm
+Temperature: 26.1599998474 Celsius degrees
+RH: 39.1660156250 %
+Pressure: 99319.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:46:44
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1499996185 Celsius degrees
+RH: 39.1660156250 %
+Pressure: 99328.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:49:45
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1399993896 Celsius degrees
+RH: 39.1982421875 %
+Pressure: 99320.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:52:46
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1299991607 Celsius degrees
+RH: 39.1855468750 %
+Pressure: 99329.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:55:47
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1200008392 Celsius degrees
+RH: 39.1621093750 %
+Pressure: 99333.5937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Tue, 17/05/24, 23:58:48
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.1100006103 Celsius degrees
+RH: 39.1503906250 %
+Pressure: 99321.1718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:01:49
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0900001525 Celsius degrees
+RH: 38.8603515625 %
+Pressure: 99319.4687500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:04:50
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0900001525 Celsius degrees
+RH: 39.1601562500 %
+Pressure: 99316.7890625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:07:51
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0900001525 Celsius degrees
+RH: 39.1601562500 %
+Pressure: 99323.1093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:10:52
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0900001525 Celsius degrees
+RH: 39.2050781250 %
+Pressure: 99315.0781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:13:53
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0900001525 Celsius degrees
+RH: 39.2041015625 %
+Pressure: 99326.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:16:54
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0799999237 Celsius degrees
+RH: 39.1816406250 %
+Pressure: 99338.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:19:55
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0699996948 Celsius degrees
+RH: 39.1923828125 %
+Pressure: 99330.3984375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:22:56
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0599994659 Celsius degrees
+RH: 39.1572265625 %
+Pressure: 99330.3984375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:25:57
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0599994659 Celsius degrees
+RH: 39.1914062500 %
+Pressure: 99339.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:28:58
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0400009155 Celsius degrees
+RH: 39.2001953125 %
+Pressure: 99326.9765625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:31:59
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0400009155 Celsius degrees
+RH: 39.1796875000 %
+Pressure: 99336.8281250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:35:00
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0400009155 Celsius degrees
+RH: 39.4345703125 %
+Pressure: 99344.8593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:38:01
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0300006866 Celsius degrees
+RH: 39.2119140625 %
+Pressure: 99339.6093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:41:02
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0300006866 Celsius degrees
+RH: 39.2226562500 %
+Pressure: 99323.5546875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:44:03
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0200004577 Celsius degrees
+RH: 39.2890625000 %
+Pressure: 99329.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:47:04
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0200004577 Celsius degrees
+RH: 39.2314453125 %
+Pressure: 99327.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:50:05
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0100002288 Celsius degrees
+RH: 38.9990234375 %
+Pressure: 99337.9062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:53:06
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0100002288 Celsius degrees
+RH: 39.2314453125 %
+Pressure: 99326.3437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:56:07
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0000000000 Celsius degrees
+RH: 38.9853515625 %
+Pressure: 99329.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 00:59:08
+Gas concentration: 691.0161743164 ppm
+Temperature: 26.0000000000 Celsius degrees
+RH: 39.5195312500 %
+Pressure: 99334.4531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:02:09
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9899997711 Celsius degrees
+RH: 39.2412109375 %
+Pressure: 99324.5937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:05:10
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9799995422 Celsius degrees
+RH: 39.2285156250 %
+Pressure: 99327.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:08:11
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9799995422 Celsius degrees
+RH: 39.2167968750 %
+Pressure: 99331.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:11:12
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9799995422 Celsius degrees
+RH: 39.3173828125 %
+Pressure: 99337.2343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:14:13
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9699993133 Celsius degrees
+RH: 39.2060546875 %
+Pressure: 99321.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:17:14
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9500007629 Celsius degrees
+RH: 39.2041015625 %
+Pressure: 99330.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:20:15
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9599990844 Celsius degrees
+RH: 38.8925781250 %
+Pressure: 99320.5468750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:23:16
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9400005340 Celsius degrees
+RH: 39.1484375000 %
+Pressure: 99323.2187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:26:17
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9500007629 Celsius degrees
+RH: 39.1699218750 %
+Pressure: 99328.5781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:29:18
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9599990844 Celsius degrees
+RH: 39.1933593750 %
+Pressure: 99327.7187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:32:19
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9400005340 Celsius degrees
+RH: 39.1601562500 %
+Pressure: 99330.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:35:20
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9400005340 Celsius degrees
+RH: 39.1591796875 %
+Pressure: 99335.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:38:21
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9300003051 Celsius degrees
+RH: 39.1474609375 %
+Pressure: 99334.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:41:22
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9300003051 Celsius degrees
+RH: 39.1240234375 %
+Pressure: 99339.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:44:23
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9200000762 Celsius degrees
+RH: 39.1552734375 %
+Pressure: 99338.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:47:24
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.9099998474 Celsius degrees
+RH: 39.4335937500 %
+Pressure: 99344.8515625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:50:25
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8999996185 Celsius degrees
+RH: 39.0996093750 %
+Pressure: 99342.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:53:26
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8899993896 Celsius degrees
+RH: 39.2099609375 %
+Pressure: 99349.4531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:56:27
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8899993896 Celsius degrees
+RH: 39.4208984375 %
+Pressure: 99346.7812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 01:59:28
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8899993896 Celsius degrees
+RH: 39.2089843750 %
+Pressure: 99349.5625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:02:29
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8799991607 Celsius degrees
+RH: 39.0644531250 %
+Pressure: 99340.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:05:30
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8700008392 Celsius degrees
+RH: 39.0527343750 %
+Pressure: 99347.0000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:08:31
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8600006103 Celsius degrees
+RH: 39.0175781250 %
+Pressure: 99355.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:11:32
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8600006103 Celsius degrees
+RH: 39.2294921875 %
+Pressure: 99351.6093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:14:33
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8500003814 Celsius degrees
+RH: 39.0273437500 %
+Pressure: 99345.2890625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:17:34
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 38.9941406250 %
+Pressure: 99334.7031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:20:35
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 38.9716796875 %
+Pressure: 99334.7031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:23:36
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 38.9833984375 %
+Pressure: 99330.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:26:37
+Gas concentration: 691.0640869140 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 39.2949218750 %
+Pressure: 99330.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:29:38
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 38.9375000000 %
+Pressure: 99332.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:32:39
+Gas concentration: 691.0640869140 ppm
+Temperature: 25.8400001525 Celsius degrees
+RH: 38.7822265625 %
+Pressure: 99333.8437500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:35:40
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.8299999237 Celsius degrees
+RH: 38.9052734375 %
+Pressure: 99332.1328125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:38:41
+Gas concentration: 691.1121215820 ppm
+Temperature: 25.8199996948 Celsius degrees
+RH: 38.9023437500 %
+Pressure: 99333.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:41:42
+Gas concentration: 691.1602172851 ppm
+Temperature: 25.8199996948 Celsius degrees
+RH: 38.8798828125 %
+Pressure: 99336.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:44:43
+Gas concentration: 691.1121215820 ppm
+Temperature: 25.7900009155 Celsius degrees
+RH: 38.9013671875 %
+Pressure: 99334.0625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:47:44
+Gas concentration: 691.1121215820 ppm
+Temperature: 25.7900009155 Celsius degrees
+RH: 38.9121093750 %
+Pressure: 99321.6562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:50:45
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7800006866 Celsius degrees
+RH: 38.9443359375 %
+Pressure: 99330.6406250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:53:46
+Gas concentration: 691.0640869140 ppm
+Temperature: 25.8099994659 Celsius degrees
+RH: 38.9228515625 %
+Pressure: 99321.6562500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:56:47
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7800006866 Celsius degrees
+RH: 38.9667968750 %
+Pressure: 99313.7343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 02:59:48
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7900009155 Celsius degrees
+RH: 38.9335937500 %
+Pressure: 99318.9765625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:02:49
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7800006866 Celsius degrees
+RH: 39.0224609375 %
+Pressure: 99317.2656250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:05:50
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7700004577 Celsius degrees
+RH: 39.0214843750 %
+Pressure: 99312.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:08:51
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7600002288 Celsius degrees
+RH: 39.0439453125 %
+Pressure: 99310.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:11:52
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7500000000 Celsius degrees
+RH: 39.3203125000 %
+Pressure: 99305.9296875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:14:53
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.7399997711 Celsius degrees
+RH: 38.8291015625 %
+Pressure: 99305.0781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:17:54
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.7299995422 Celsius degrees
+RH: 39.1523437500 %
+Pressure: 99306.0390625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:20:55
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7299995422 Celsius degrees
+RH: 39.2080078125 %
+Pressure: 99305.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:23:56
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7199993133 Celsius degrees
+RH: 39.2294921875 %
+Pressure: 99304.2187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:26:57
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7299995422 Celsius degrees
+RH: 39.4628906250 %
+Pressure: 99304.3281250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:29:58
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.7099990844 Celsius degrees
+RH: 39.3173828125 %
+Pressure: 99313.3203125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:32:59
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6900005340 Celsius degrees
+RH: 39.3935546875 %
+Pressure: 99300.0546875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:36:00
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6900005340 Celsius degrees
+RH: 39.4599609375 %
+Pressure: 99297.4843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:39:01
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6800003051 Celsius degrees
+RH: 39.4472656250 %
+Pressure: 99295.6718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:42:02
+Gas concentration: 686.1684570312 ppm
+Temperature: 25.6800003051 Celsius degrees
+RH: 39.4697265625 %
+Pressure: 99299.1953125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:45:03
+Gas concentration: 684.9207153320 ppm
+Temperature: 25.6800003051 Celsius degrees
+RH: 39.3027343750 %
+Pressure: 99295.7812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:48:04
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6700000762 Celsius degrees
+RH: 39.5361328125 %
+Pressure: 99296.6328125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:51:05
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6700000762 Celsius degrees
+RH: 39.5693359375 %
+Pressure: 99299.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:54:06
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6700000762 Celsius degrees
+RH: 39.5800781250 %
+Pressure: 99306.4765625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 03:57:07
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6599998474 Celsius degrees
+RH: 39.3466796875 %
+Pressure: 99304.7656250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:00:08
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6499996185 Celsius degrees
+RH: 39.6337890625 %
+Pressure: 99297.6718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:03:09
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6399993896 Celsius degrees
+RH: 39.6669921875 %
+Pressure: 99306.6640625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:06:10
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6499996185 Celsius degrees
+RH: 39.6992187500 %
+Pressure: 99301.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:09:11
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6399993896 Celsius degrees
+RH: 39.6992187500 %
+Pressure: 99305.8125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:12:12
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6200008392 Celsius degrees
+RH: 39.7324218750 %
+Pressure: 99298.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:15:13
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6299991607 Celsius degrees
+RH: 39.7216796875 %
+Pressure: 99304.9531250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:18:14
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6299991607 Celsius degrees
+RH: 39.7753906250 %
+Pressure: 99303.2421875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:21:15
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.7978515625 %
+Pressure: 99302.5000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:24:16
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6100006103 Celsius degrees
+RH: 39.7861328125 %
+Pressure: 99301.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:27:17
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.8408203125 %
+Pressure: 99290.9453125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:30:18
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6100006103 Celsius degrees
+RH: 39.8183593750 %
+Pressure: 99297.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:33:19
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6299991607 Celsius degrees
+RH: 39.5644531250 %
+Pressure: 99301.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:36:20
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.8300781250 %
+Pressure: 99301.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:39:21
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.8300781250 %
+Pressure: 99296.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:42:22
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.8632812500 %
+Pressure: 99298.1093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:45:23
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6100006103 Celsius degrees
+RH: 39.8857421875 %
+Pressure: 99301.6406250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:48:24
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 40.0410156250 %
+Pressure: 99306.9843750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:51:25
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5799999237 Celsius degrees
+RH: 39.8847656250 %
+Pressure: 99299.9296875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:54:26
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.6000003814 Celsius degrees
+RH: 39.8515625000 %
+Pressure: 99302.5000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 04:57:27
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5799999237 Celsius degrees
+RH: 39.9287109375 %
+Pressure: 99305.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:00:28
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5699996948 Celsius degrees
+RH: 39.7050781250 %
+Pressure: 99305.3906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:03:29
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5699996948 Celsius degrees
+RH: 39.9267578125 %
+Pressure: 99304.5312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:06:30
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5599994659 Celsius degrees
+RH: 39.9384765625 %
+Pressure: 99301.8593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:09:31
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5699996948 Celsius degrees
+RH: 40.0048828125 %
+Pressure: 99294.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:12:32
+Gas concentration: 672.7296752929 ppm
+Temperature: 25.5499992370 Celsius degrees
+RH: 40.0029296875 %
+Pressure: 99305.6093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:15:33
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5499992370 Celsius degrees
+RH: 39.7685546875 %
+Pressure: 99301.1093750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:18:34
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5400009155 Celsius degrees
+RH: 39.9921875000 %
+Pressure: 99299.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:21:35
+Gas concentration: 672.3457031250 ppm
+Temperature: 25.5400009155 Celsius degrees
+RH: 40.2363281250 %
+Pressure: 99294.9062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:24:36
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5499992370 Celsius degrees
+RH: 40.0029296875 %
+Pressure: 99294.9062500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:27:37
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5400009155 Celsius degrees
+RH: 40.0136718750 %
+Pressure: 99293.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:30:38
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5300006866 Celsius degrees
+RH: 40.0566406250 %
+Pressure: 99297.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:33:39
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5100002288 Celsius degrees
+RH: 40.0878906250 %
+Pressure: 99299.5156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:36:40
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5100002288 Celsius degrees
+RH: 40.0878906250 %
+Pressure: 99296.8359375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:39:41
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5200004577 Celsius degrees
+RH: 40.0556640625 %
+Pressure: 99297.7968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:42:42
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5200004577 Celsius degrees
+RH: 40.0664062500 %
+Pressure: 99303.1484375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:45:43
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5000000000 Celsius degrees
+RH: 40.0654296875 %
+Pressure: 99298.7656250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:48:44
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5100002288 Celsius degrees
+RH: 40.0771484375 %
+Pressure: 99288.9218750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:51:45
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5000000000 Celsius degrees
+RH: 40.0996093750 %
+Pressure: 99296.0937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:54:46
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.5100002288 Celsius degrees
+RH: 40.3105468750 %
+Pressure: 99288.0703125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 05:57:47
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4899997711 Celsius degrees
+RH: 40.0878906250 %
+Pressure: 99297.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:00:48
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5100002288 Celsius degrees
+RH: 40.0107421875 %
+Pressure: 99293.3046875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:03:49
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5000000000 Celsius degrees
+RH: 40.0654296875 %
+Pressure: 99293.4140625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:06:50
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4899997711 Celsius degrees
+RH: 40.0976562500 %
+Pressure: 99295.3125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:09:51
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4899997711 Celsius degrees
+RH: 40.0429687500 %
+Pressure: 99296.1640625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:12:52
+Gas concentration: 672.7296752929 ppm
+Temperature: 25.4699993133 Celsius degrees
+RH: 39.8632812500 %
+Pressure: 99301.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:15:53
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 40.2197265625 %
+Pressure: 99290.9218750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:18:54
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4699993133 Celsius degrees
+RH: 39.7529296875 %
+Pressure: 99287.2812500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:21:55
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 40.0634765625 %
+Pressure: 99285.6875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:24:56
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4400005340 Celsius degrees
+RH: 39.8730468750 %
+Pressure: 99290.1796875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:27:57
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4500007629 Celsius degrees
+RH: 40.2500000000 %
+Pressure: 99291.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:30:58
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 40.0732421875 %
+Pressure: 99289.2187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:33:59
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4500007629 Celsius degrees
+RH: 40.0722656250 %
+Pressure: 99290.1796875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:37:00
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4500007629 Celsius degrees
+RH: 40.0625000000 %
+Pressure: 99294.6718750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:40:01
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 39.8281250000 %
+Pressure: 99291.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:43:02
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 39.8398437500 %
+Pressure: 99296.2734375000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:46:03
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 40.0400390625 %
+Pressure: 99291.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:49:04
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4599990844 Celsius degrees
+RH: 40.0292968750 %
+Pressure: 99304.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:52:05
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4699993133 Celsius degrees
+RH: 40.0302734375 %
+Pressure: 99306.0000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:55:06
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.4799995422 Celsius degrees
+RH: 40.0292968750 %
+Pressure: 99303.3281250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 06:58:07
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5000000000 Celsius degrees
+RH: 39.9990234375 %
+Pressure: 99304.9687500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:01:08
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.5200004577 Celsius degrees
+RH: 40.2128906250 %
+Pressure: 99312.8750000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:04:09
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5400009155 Celsius degrees
+RH: 39.9462890625 %
+Pressure: 99309.2421875000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:07:10
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5300006866 Celsius degrees
+RH: 39.9355468750 %
+Pressure: 99303.8906250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:10:11
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.5300006866 Celsius degrees
+RH: 39.9121093750 %
+Pressure: 99314.5937500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:13:12
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4799995422 Celsius degrees
+RH: 39.9873046875 %
+Pressure: 99315.7343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:16:13
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4200000762 Celsius degrees
+RH: 40.1259765625 %
+Pressure: 99307.2968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:19:14
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.3999996185 Celsius degrees
+RH: 40.1679687500 %
+Pressure: 99316.3828125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:22:15
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4200000762 Celsius degrees
+RH: 40.1357421875 %
+Pressure: 99310.0781250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:25:16
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.4099998474 Celsius degrees
+RH: 39.8798828125 %
+Pressure: 99317.1328125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:28:17
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3899993896 Celsius degrees
+RH: 40.1562500000 %
+Pressure: 99318.2031250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:31:18
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3700008392 Celsius degrees
+RH: 40.2207031250 %
+Pressure: 99324.6250000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:34:19
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3299999237 Celsius degrees
+RH: 40.2949218750 %
+Pressure: 99325.7968750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:37:20
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.2999992370 Celsius degrees
+RH: 40.3593750000 %
+Pressure: 99326.8593750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:40:21
+Gas concentration: 672.7296752929 ppm
+Temperature: 25.2999992370 Celsius degrees
+RH: 40.3818359375 %
+Pressure: 99317.1328125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:43:22
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.2999992370 Celsius degrees
+RH: 40.4033203125 %
+Pressure: 99326.0078125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:46:23
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.2900009155 Celsius degrees
+RH: 40.4023437500 %
+Pressure: 99334.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:49:24
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.2999992370 Celsius degrees
+RH: 40.6591796875 %
+Pressure: 99326.0078125000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:52:25
+Gas concentration: 666.6341552734 ppm
+Temperature: 25.3099994659 Celsius degrees
+RH: 40.3935546875 %
+Pressure: 99313.5000000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:55:26
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3500003814 Celsius degrees
+RH: 40.3408203125 %
+Pressure: 99332.8515625000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 07:58:27
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3600006103 Celsius degrees
+RH: 40.6318359375 %
+Pressure: 99338.7343750000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:01:28
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3899993896 Celsius degrees
+RH: 40.3447265625 %
+Pressure: 99329.7500000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:04:29
+Gas concentration: 691.0161743164 ppm
+Temperature: 25.3999996185 Celsius degrees
+RH: 40.7236328125 %
+Pressure: 99336.8125000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:07:30
+Gas concentration: 740.0200195312 ppm
+Temperature: 25.4200000762 Celsius degrees
+RH: 40.4814453125 %
+Pressure: 99334.0312500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:10:31
+Gas concentration: 764.7376708984 ppm
+Temperature: 25.2999992370 Celsius degrees
+RH: 40.5595703125 %
+Pressure: 99333.0625000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:13:32
+Gas concentration: 813.8854980468 ppm
+Temperature: 25.1800003051 Celsius degrees
+RH: 41.0917968750 %
+Pressure: 99324.1875000000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:16:33
+Gas concentration: 863.2732543945 ppm
+Temperature: 25.0200004577 Celsius degrees
+RH: 41.1777343750 %
+Pressure: 99329.7187500000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:19:34
+Gas concentration: 838.4594116210 ppm
+Temperature: 25.0200004577 Celsius degrees
+RH: 41.8652343750 %
+Pressure: 99328.0156250000 Pa
+***************************************
+Time [Day of week, YY/MM/DD, hh:mm:ss]: Wed, 17/05/25, 08:22:35
+Gas concentration: 912.3729858398 ppm
+Temperature: 25.1499996185 Celsius degrees
+RH: 41.7353515625 %
+Pressure: 99326.1093750000 Pa

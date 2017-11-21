@@ -1,0 +1,520 @@
+H#
+1. Switch ON OK
+2. Reset to factory default values OK
+3.1. Set Device EUI OK
+3.2. Get Device EUI OK. Device EUI: 00D859AA2E4ED47F
+4.1. Set Device address OK
+4.2. Get Device address OK. Device address: 26011051
+5. Set Network Session Key OK
+6. Set Application Session Key OK
+7.1. Set Retransmissions for uplink confirmed packet OK
+7.2. Get Retransmissions for uplink confirmed packet OK. TX retries: 7
+8. Application key set OK
+13.1. Set Adaptive data rate status to on OK
+13.2. Get Adaptive data rate status OK. Adaptive data rate status: on
+14.1. Set automatic reply status to on OK
+14.2. Get automatic reply status OK. Automatic reply status: on
+15. Save configuration OK
+------------------------------------
+Now the LoRaWAN module is ready for
+joining networks and send messages.
+Please check the next examples...
+------------------------------------
+
+4. Switch OFF OK
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1200008392
+temperature: 16.1200008392
+temperature: 16.1100006103
+humidity: 44.3896484375
+humidity: 44.3671875000
+humidity: 44.3671875000
+humidity: 44.3691406250
+humidity: 44.4013671875
+humidity: 44.3779296875
+humidity: 44.3906250000
+humidity: 44.3671875000
+humidity: 44.4013671875
+humidity: 44.3789062500
+pressure: 100921.3281250000
+pressure: 100910.9062500000
+pressure: 100916.0937500000
+pressure: 100915.2343750000
+pressure: 100916.9609375000
+pressure: 100918.7031250000
+pressure: 100908.2812500000
+pressure: 100919.5703125000
+pressure: 100917.8281250000
+pressure: 100915.2187500000
+volt: 4.1840000152
+volt: 4.1789999008
+volt: 4.1739997863
+volt: 4.1739997863
+volt: 4.1589999198
+volt: 4.1840000152
+volt: 4.1789999008
+volt: 4.1789999008
+volt: 4.1840000152
+volt: 4.1840000152
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372300B10900AF01AD54E38540B0000001000000004A22DB80414C338631424D021AC5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��T�@�J"ۀAL3�1BM�GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+3. Send Unconfirmed packet OK
+4. Switch OFF OK
+[PWR] deepSleep RTC error
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1100006103
+humidity: 44.3554687500
+humidity: 44.3779296875
+humidity: 44.3564453125
+humidity: 44.3554687500
+humidity: 44.3564453125
+humidity: 44.3798828125
+humidity: 44.3466796875
+humidity: 44.3798828125
+humidity: 44.3789062500
+humidity: 44.3574218750
+pressure: 100919.5859375000
+pressure: 100914.3750000000
+pressure: 100915.2343750000
+pressure: 100916.9765625000
+pressure: 100919.5703125000
+pressure: 100913.4921875000
+pressure: 100914.3593750000
+pressure: 100915.2187500000
+pressure: 100918.6562500000
+pressure: 100915.2187500000
+volt: 4.1789999008
+volt: 4.1690001487
+volt: 4.1640000343
+volt: 4.1690001487
+volt: 4.1739997863
+volt: 4.1890001296
+volt: 4.1840000152
+volt: 4.1690001487
+volt: 4.1739997863
+volt: 4.1840000152
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372301B10900AF01AD5EBA8540B0000001000000004A23DB80414C337531424D221AC5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��^��@�J#ۀAL3u1BM"�GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+3. Send Unconfirmed packet OK
+4. Switch OFF OK
+[PWR] deepSleep RTC error
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1200008392
+temperature: 16.1100006103
+humidity: 44.4228515625
+humidity: 44.4228515625
+humidity: 44.4443359375
+humidity: 44.4345703125
+humidity: 44.4345703125
+humidity: 44.4248046875
+humidity: 44.4355468750
+humidity: 44.4453125000
+humidity: 44.4355468750
+humidity: 44.4453125000
+pressure: 100913.5078125000
+pressure: 100910.8906250000
+pressure: 100916.0937500000
+pressure: 100907.4140625000
+pressure: 100911.7500000000
+pressure: 100907.4140625000
+pressure: 100910.0078125000
+pressure: 100905.6718750000
+pressure: 100908.2812500000
+pressure: 100903.0625000000
+volt: 4.1739997863
+volt: 4.1690001487
+volt: 4.1690001487
+volt: 4.1840000152
+volt: 4.1840000152
+volt: 4.1589999198
+volt: 4.1589999198
+volt: 4.1840000152
+volt: 4.1739997863
+volt: 4.1840000152
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372300B10900AF01AD68918540B0000001000000004A16D980414C00BD31424DB416C5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��h��@�JـAL�1BM��GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+3. Send Unconfirmed packet OK
+4. Switch OFF OK
+[PWR] deepSleep RTC error
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1200008392
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1200008392
+temperature: 16.1200008392
+temperature: 16.1100006103
+humidity: 44.3232421875
+humidity: 44.3134765625
+humidity: 44.3115234375
+humidity: 44.3222656250
+humidity: 44.3115234375
+humidity: 44.3125000000
+humidity: 44.3232421875
+humidity: 44.3242187500
+humidity: 44.3134765625
+humidity: 44.3017578125
+pressure: 100906.5468750000
+pressure: 100912.6250000000
+pressure: 100904.8125000000
+pressure: 100907.4140625000
+pressure: 100908.2812500000
+pressure: 100908.2812500000
+pressure: 100909.1406250000
+pressure: 100910.8359375000
+pressure: 100911.7500000000
+pressure: 100908.2265625000
+volt: 4.1690001487
+volt: 4.1840000152
+volt: 4.1840000152
+volt: 4.1739997863
+volt: 4.1789999008
+volt: 4.1690001487
+volt: 4.1739997863
+volt: 4.1890001296
+volt: 4.1739997863
+volt: 4.1739997863
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372301B10900AF01AD73688540B0000001000000004A60E580414C4D4331424D6616C5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��sh�@�J`�ALMC1BMf�GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+3. Send Unconfirmed packet OK
+4. Switch OFF OK
+[PWR] deepSleep RTC error
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1000003814
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1100006103
+temperature: 16.1200008392
+temperature: 16.1200008392
+temperature: 16.1100006103
+temperature: 16.1100006103
+humidity: 44.3779296875
+humidity: 44.3671875000
+humidity: 44.3886718750
+humidity: 44.3789062500
+humidity: 44.3554687500
+humidity: 44.3554687500
+humidity: 44.3671875000
+humidity: 44.3886718750
+humidity: 44.3789062500
+humidity: 44.3779296875
+pressure: 100915.2500000000
+pressure: 100907.4296875000
+pressure: 100905.6875000000
+pressure: 100910.0234375000
+pressure: 100909.1562500000
+pressure: 100908.2812500000
+pressure: 100909.1406250000
+pressure: 100909.1406250000
+pressure: 100907.4140625000
+pressure: 100907.3984375000
+volt: 4.1789999008
+volt: 4.1589999198
+volt: 4.1589999198
+volt: 4.1840000152
+volt: 4.1640000343
+volt: 4.1589999198
+volt: 4.1789999008
+volt: 4.1840000152
+volt: 4.1890001296
+volt: 4.1789999008
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372300B10900AF01AD5EBA8540B0000001000000004A3CDF80414C9A7E31424D7216C5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��^��@�J<߀AL�~1BMr�GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+3. Send Unconfirmed packet OK
+4. Switch OFF OK
+[PWR] deepSleep RTC error
+Batterry level (%): 100
+Mode: 0
+Downling Sequence #: 0
+[PWR] deepSleep RTC error
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+co2: 0.2186997175
+temperature: 16.0799999237
+temperature: 16.0900001525
+temperature: 16.0799999237
+temperature: 16.0799999237
+temperature: 16.0799999237
+temperature: 16.0799999237
+temperature: 16.0799999237
+temperature: 16.0799999237
+temperature: 16.0900001525
+temperature: 16.0900001525
+humidity: 44.2753906250
+humidity: 44.2988281250
+humidity: 44.3222656250
+humidity: 44.2988281250
+humidity: 44.3105468750
+humidity: 44.2998046875
+humidity: 44.2998046875
+humidity: 44.2998046875
+humidity: 44.2998046875
+humidity: 44.2890625000
+pressure: 100902.2656250000
+pressure: 100900.5234375000
+pressure: 100904.8281250000
+pressure: 100899.6093750000
+pressure: 100899.6093750000
+pressure: 100902.2187500000
+pressure: 100904.8125000000
+pressure: 100903.0781250000
+pressure: 100901.3437500000
+pressure: 100904.8125000000
+volt: 4.1840000152
+volt: 4.1640000343
+volt: 4.1840000152
+volt: 4.1539998054
+volt: 4.1840000152
+volt: 4.1840000152
+volt: 4.1840000152
+volt: 4.1789999008
+volt: 4.1589999198
+volt: 4.1840000152
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+charge current: 0
+===============================
+Current BINARY Frame:
+Length: 85
+Frame Type:  6
+frame (HEX): 3C3D3E06502C1B7063D937422B776D74726F6F6676332D372301B10900AF01AD54E38540B0000001000000004AFCA980414C9A3231424D2913C5474600000000470000000048000000000600000000AE0000AE0000
+frame (STR): <=>P,pc�7B+wmtroofv3-7#�	��T�@�J���AL�21BM)�GFGH��
+===============================
+Error when setting the frequency channel 1. Error code: 7
+Error when setting the frequency channel 2. Error code: 7
+The channel 3 is set to 868.4999389648 MHz.
+The channel 4 is set to 867.1000366210 MHz.
+The channel 5 is set to 867.2999877929 MHz.
+The channel 6 is set to 867.5000610351 MHz.
+The channel 7 is set to 867.6999511718 MHz.
+The channel 8 is set to 867.9000244140 MHz.
+1. Switch ON OK
+

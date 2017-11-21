@@ -1,0 +1,26 @@
+{
+  "build": {
+    "core": "waspmote", 
+    "extra_flags": "-DARDUINO_ARCH_AVR -DARDUINO_AVR_MEGA", 
+    "f_cpu": "14745600L", 
+    "mcu": "atmega1281", 
+    "variant": "mega"
+  }, 
+  "frameworks": [
+    "waspmote"
+  ], 
+  "fuses": {
+    "efuse": "0xF5", 
+    "hfuse": "0xDA"
+  }, 
+  "name": "Waspmote ATmega1281", 
+  "upload": {
+    "maximum_ram_size": 8000, 
+    "maximum_size": 122800, 
+    "protocol": "arduino", 
+    "require_upload_port": true, 
+    "speed": 112500
+  }, 
+  "url": "http://www.libelium.com/development/waspmote/", 
+  "vendor": "Libelium"
+}
