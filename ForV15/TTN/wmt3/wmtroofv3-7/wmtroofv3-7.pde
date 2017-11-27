@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 11
+#define VERSION 12
 
 // Concentratios used in calibration process (PPM Values)
 #define POINT1_PPM_CO2 300.0  //   <-- Normal concentration in air
@@ -136,9 +136,38 @@ void setup()
 	CO2Sensor.setCalibrationPoints(voltages, concentrations, CAL_POINTS);
 }
 
+int getBatteryLevelFromVolt(double volt)
+{
+	int bits = volt * 1023 / 3.3;
+	double aux = bits / 2.0;
+	if(aux < 512)
+		return 0;
+	else if(aux > 651)
+		return 100;
+	else if(aux > 543)
+		return (aux * (90.0 / 108.0)) - 442.0;
+	else
+		return ((10.0 / (543.0 - 511.0)) * aux) - 160.0;
+}
+
+int getAveragedBatteryLevel(int numSamples)
+{
+	int i = 0;
+	double accBattVolt = 0;
+	double avgBattVolt;
+	int avgBattLevel;
+	while(i < numSamples)
+	{
+		accBattVolt += PWR.getBatteryVolts();
+		i++;
+	}
+	avgBattVolt = accBattVolt / numSamples;
+	return getBatteryLevelFromVolt(avgBattVolt);
+}
+
 void loop()
 {
-	batteryLevel = PWR.getBatteryLevel();
+	batteryLevel = getAveragedBatteryLevel(MAX_SENSE_COUNT);
 #ifdef SHOW_BATT_LEVEL
 	USB.print("Batterry level (%): ");
 	USB.println(batteryLevel);
