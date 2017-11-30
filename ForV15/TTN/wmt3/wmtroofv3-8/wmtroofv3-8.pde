@@ -6,7 +6,7 @@
    have to be added to Waspmote's library file WaspFrameConstantsv15.h.
    This was done in the file in the directory 'modified-waspmote-libraries'.
  */
-#define VERSION 11
+#define VERSION 13
 
 // Concentratios used in calibration process (PPM Values)
 #define POINT1_PPM_CO2 300.0  //   <-- Normal concentration in air
@@ -109,7 +109,7 @@ void s10PercentOutof20Min(); //for mode 7
 void sOnlyBattAndCharge10Min(); //for mode 8 (just to transmit the battery level and charging current every 10 minutes)
 void sOnlyBattAndCharge60Min(); //for mode 9 (just to transmit the battery level and charging current every 60 minutes)
 
-#define MAX_FN_IDX 9
+#define MAX_FN_IDX 7
 #define DEFAULT_FN_IDX 5
 #define BC_10_IDX 8
 #define BC_60_IDX 9
